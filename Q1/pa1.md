@@ -223,9 +223,7 @@ Thus, **Modules are made up of Cells** is correct.
 ---
 ### Q10 — Find Base for Equation 514/20 = 24.2
 **What will be the base of the number system such that the following equation holds?**
-$$
-\frac{514}{20} = 24.2
-$$
+$\displaystyle \frac{514}{20} = 24.2$
 
 <details>
 <summary><b>Answer & Solution</b></summary>

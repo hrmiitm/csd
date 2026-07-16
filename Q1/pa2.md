@@ -3,9 +3,7 @@
 
 ### Q1 — De Morgan's Theorem Representation
 **One of De Morgan’s theorems states that:**
-$$
-\overline{(x + y)} = \overline{x} \cdot \overline{y}
-$$
+$\displaystyle \overline{(x + y)} = \overline{x} \cdot \overline{y}$
 **Simply stated, this means that logically there is no difference between:**
 - ( ) an AND gate and a NOR gate with inverted inputs
 - ( ) a NOR gate and an AND gate with inverted inputs
@@ -22,6 +20,8 @@ $$
 **Step 1 — Analyze the mathematical expression.**
 The left-hand side of the equation is $\overline{(x + y)}$, which represents a **NOR** operation on inputs $x$ and $y$.
 The right-hand side is $\overline{x} \cdot \overline{y}$, which represents an **AND** operation with inverted inputs (both $x$ and $y$ are passed through NOT gates before entering the AND gate).
+
+The dot is essential: $\overline{x}\cdot\overline{y}$ is different from $\overline{xy}$. In fact, $\overline{(x+y)}=\overline{x}\cdot\overline{y}$, while $\overline{xy}=\overline{x}+\overline{y}$.
 **Step 2 — Map to logical gate equivalents.**
 By equating the two sides:
 $\displaystyle \text{NOR}(x, y) = \text{AND}(\overline{x}, \overline{y})$
@@ -56,9 +56,7 @@ Thus, all options are correct and represent primary aims of Boolean simplificati
 ---
 ### Q3 — Simplify expression: $(A\overline{B}(C + BD) + \overline{A}\cdot\overline{B})C$
 **Write the reduced form for the Boolean expression:**
-$$
-(A\overline{B}(C + BD) + \overline{A}\cdot\overline{B})C
-$$
+$\displaystyle (A\overline{B}(C + BD) + \overline{A}\cdot\overline{B})C$
 - ( ) $\overline{B}C$
 - ( ) $B\overline{C}$
 - ( ) $\overline{BC}$
@@ -93,9 +91,7 @@ $\displaystyle 1 \cdot \overline{B}C = \boxed{\overline{B}C}$
 ---
 ### Q4 — Dual of a Boolean Function
 **What is the dual of the given algebraic Boolean function?**
-$$
-F(A, B, C, D) = ABCD + \overline{A}BCD + A\overline{B}CD + ABC\overline{D}
-$$
+$\displaystyle F(A, B, C, D) = ABCD + \overline{A}BCD + A\overline{B}CD + ABC\overline{D}$
 - ( ) $(A + B + \overline{C} + D)(\overline{A} + B + C + D)(A + \overline{B} + C + D)(A + B + C + \overline{D})$
 - ( ) $(A + B + C + D)(\overline{A} + B + C + D)(A + \overline{B} + C + D)(A + B + C + \overline{D})$
 - ( ) $(\overline{A} + \overline{B} + \overline{C} + \overline{D})(\overline{A} + B + C + D)(A + \overline{B} + C + D)(A + B + C + \overline{D})$
@@ -125,9 +121,7 @@ $\displaystyle F_{\text{dual}} = \boxed{(A + B + C + D)(\overline{A} + B + C + D
 ---
 ### Q5 — Literals in Simplified Expression
 **Find the number of literals required to represent the given Boolean expression in its simplified form:**
-$$
-F(A, B, C, D) = \overline{A}B(\overline{D} + \overline{C}D) + B(A + \overline{A}CD)
-$$
+$\displaystyle F(A, B, C, D) = \overline{A}B(\overline{D} + \overline{C}D) + B(A + \overline{A}CD)$
 
 <details>
 <summary><b>Answer & Solution</b></summary>

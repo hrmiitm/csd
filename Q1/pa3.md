@@ -290,9 +290,7 @@ $\displaystyle F = \prod M(3, 5, 6, 7)$
 ---
 ### Q10 — Variable Independence of Boolean Function
 **Consider the given Boolean function of three variables:**
-$$
-f(x, y, z) = \sum(1, 3, 5, 7)
-$$
+$\displaystyle f(x, y, z) = \sum(1, 3, 5, 7)$
 **The given function is:**
 - ( ) Independent of one variable
 - ( ) Independent of three variables

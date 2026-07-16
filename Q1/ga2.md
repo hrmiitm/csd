@@ -137,15 +137,27 @@ $$
 **Step 1 — Apply De Morgan's Laws to the expression.**
 
 Recall that $\overline{A \cdot B \cdot C} = \overline{A} + \overline{B} + \overline{C}$. Let:
-- $A = x + y \implies \overline{A} = \overline{x}\overline{y}$
+- $A = x + y \implies \overline{A} = \overline{x}\,\overline{y}$
 - $B = x + \overline{z} \implies \overline{B} = \overline{x}z$
 - $C = \overline{x} + \overline{y} + z \implies \overline{C} = xy\overline{z}$
 
+Be careful with the first term: $\overline{x}\,\overline{y}$ means **NOT $x$ AND NOT $y$**. It is exactly the complement of $x+y$:
+
+$$
+\overline{(x+y)}=\overline{x}\,\overline{y}.
+$$
+
+It is **not** the same as $\overline{xy}$. The complement of an AND is different:
+
+$$
+\overline{xy}=\overline{x}+\overline{y}.
+$$
+
 **Step 2 — Combine the terms.**
 
-$\displaystyle Y = \overline{A} + \overline{B} + \overline{C} = \overline{x}\overline{y} + \overline{x}z + xy\overline{z}$
+$\displaystyle Y = \overline{A} + \overline{B} + \overline{C} = \overline{x}\,\overline{y} + \overline{x}z + xy\overline{z}$
 
-$\displaystyle \boxed{Y = \overline{x}\overline{y} + \overline{x}z + xy\overline{z}}$
+$\displaystyle \boxed{Y = \overline{x}\,\overline{y} + \overline{x}z + xy\overline{z}}$
 </details>
 
 ---

@@ -138,6 +138,8 @@ $$
 (XY)'=X'+Y'
 $$
 
+Notation check: $X'Y'$ means **NOT $X$ AND NOT $Y$**. Thus $(X+Y)'=X'Y'$; it is different from $(XY)'=X'+Y'$.
+
 ## Dual
 
 To find the dual:

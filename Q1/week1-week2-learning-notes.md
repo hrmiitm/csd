@@ -450,6 +450,16 @@ A simple memory rule is: **move NOT inside and change the operator**.
 - AND changes to OR.
 - Every variable inside the bracket gets NOT.
 
+The multiplication in $X'Y'$ matters: it means **$X'$ AND $Y'$**. Therefore the two different De Morgan laws are:
+
+$$
+\overline{(X+Y)}=\overline{X}\,\overline{Y}
+\qquad\text{but}\qquad
+\overline{XY}=\overline{X}+\overline{Y}.
+$$
+
+Do not replace $\overline{(X+Y)}$ with $\overline{XY}$; those are generally different functions. For example, when $X=0$ and $Y=1$, $\overline{(X+Y)}=0$ but $\overline{XY}=1$.
+
 Example:
 
 $$
