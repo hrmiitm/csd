@@ -4,6 +4,8 @@ Use this as a last-minute revision sheet after reading the [full learning notes]
 
 > **Read these first:** bit formulas, base rules, De Morgan's laws, and the SOP/POS table. Together they solve most Week 1–2 questions.
 
+> **NOT notation:** $A'$ means “NOT A.” It is the same as the line-above-a-letter notation used in some assignment questions.
+
 ## The 6 must-remember rules
 
 | Rule | Meaning |
@@ -12,7 +14,7 @@ Use this as a last-minute revision sheet after reading the [full learning notes]
 | $2^n-1$ | largest unsigned $n$-bit value |
 | digit $<b$ | a digit must be smaller than its base |
 | base conversion | use place values, then repeated division |
-| De Morgan | break the bar and swap AND/OR |
+| De Morgan | move NOT inside and swap AND/OR |
 | SOP/POS | SOP uses 1-rows; POS uses 0-rows |
 
 ## Bits
@@ -74,9 +76,9 @@ $$
 |---|---|
 | $A+B$ | OR |
 | $AB$ | AND |
-| $\overline A$ | NOT |
-| $\overline{AB}$ | NAND |
-| $\overline{A+B}$ | NOR |
+| $A'$ | NOT |
+| $(AB)'$ | NAND |
+| $(A+B)'$ | NOR |
 | $A\oplus B$ | XOR: inputs differ |
 | $A\odot B$ | XNOR: inputs match |
 
@@ -91,7 +93,7 @@ X+X=X,\quad XX=X
 $$
 
 $$
-X+\overline X=1,\quad X\overline X=0
+X+X'=1,\quad XX'=0
 $$
 
 $$
@@ -99,15 +101,15 @@ X+XY=X,\quad X(X+Y)=X
 $$
 
 $$
-X+\overline XY=X+Y
+X+X'Y=X+Y
 $$
 
 $$
-XY+X\overline Y=X
+XY+XY'=X
 $$
 
 $$
-(X+Y)(X+\overline Y)=X
+(X+Y)(X+Y')=X
 $$
 
 $$
@@ -121,19 +123,19 @@ $$
 Consensus:
 
 $$
-XY+\overline XZ+YZ=XY+\overline XZ.
+XY+X'Z+YZ=XY+X'Z.
 $$
 
 ## De Morgan's laws
 
-Break the bar and change the operator:
+Move NOT inside and change the operator:
 
 $$
-\boxed{\overline{X+Y}=\overline X\,\overline Y}
+(X+Y)'=X'\,Y'
 $$
 
 $$
-\boxed{\overline{XY}=\overline X+\overline Y}
+(XY)'=X'+Y'
 $$
 
 ## Dual
@@ -150,10 +152,10 @@ Dual is not the same as complement.
 
 Why simplify: fewer gates usually means lower cost and power, less delay, and higher speed.
 
-1. Remove $X\overline X=0$ terms.
+1. Remove $XX'=0$ terms.
 2. Use $XX=X$.
 3. Factor common literals.
-4. Use $X+\overline X=1$.
+4. Use $X+X'=1$.
 5. Apply absorption/pair identities.
 6. Repeat, then count gates or literals.
 
@@ -161,17 +163,17 @@ Why simplify: fewer gates usually means lower cost and power, less delay, and hi
 
 | Form | Use these truth-table rows | Term rule |
 |---|---|---|
-| Canonical SOP / $\sum m$ | $F=1$ | bit 0 $\to$ barred; bit 1 $\to$ plain |
-| Canonical POS / $\prod M$ | $F=0$ | bit 0 $\to$ plain; bit 1 $\to$ barred |
+| Canonical SOP / $\sum m$ | $F=1$ | bit 0 $\to$ NOT; bit 1 $\to$ plain |
+| Canonical POS / $\prod M$ | $F=0$ | bit 0 $\to$ plain; bit 1 $\to$ NOT |
 
 For $ABC=101$:
 
 $$
-m_5=A\overline BC
+m_5=AB'C
 $$
 
 $$
-M_5=(\overline A+B+\overline C)
+M_5=(A'+B+C')
 $$
 
 Memory line:
@@ -197,7 +199,7 @@ AC+ABC=AC\Rightarrow1\text{ AND gate}
 $$
 
 $$
-z+x\overline y\Rightarrow1\text{ NOT}+1\text{ AND}+1\text{ OR}=3\text{ gates}
+z+xy'\Rightarrow1\text{ NOT}+1\text{ AND}+1\text{ OR}=3\text{ gates}
 $$
 
 ## Exam rescue routine
@@ -211,4 +213,4 @@ $$
 ### One source warning
 
 `pa2.md` reports that a grader did not select the consensus identity
-$xy+yz+\overline xz=xy+\overline xz$. The identity is nevertheless mathematically valid; treat this as an answer-key inconsistency.
+$xy+yz+x'z=xy+x'z$. The identity is nevertheless mathematically valid; treat this as an answer-key inconsistency.

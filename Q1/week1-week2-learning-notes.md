@@ -14,12 +14,14 @@ These notes teach the ideas needed for every question in `ga1.md`, `pa1.md`, `ga
 | Largest unsigned $n$-bit value is $2^n-1$ | Largest binary number |
 | Convert base $b$ using powers of $b$ | All number-base conversions |
 | Every digit must be smaller than its base | Unknown-base questions |
-| Break a bar, swap AND/OR | De Morgan questions |
+| Move NOT inside, swap AND/OR | De Morgan questions |
 | SOP uses 1-rows; POS uses 0-rows | Minterms and maxterms |
 
 ## 1. The language used in these notes
 
 A **bit** is one binary digit. It can be either `0` or `1`.
+
+In these notes, a prime means **NOT**. Read $A'$ as “NOT A.” Your assignments sometimes show NOT using a line above a letter; it has exactly the same meaning. Prime notation is used here because it stays clear and reliable on GitHub.
 
 In Boolean algebra:
 
@@ -27,7 +29,7 @@ In Boolean algebra:
 |---|---|---|
 | $A+B$ | $A$ OR $B$ | OR |
 | $AB$ or $A\cdot B$ | $A$ AND $B$ | AND |
-| $\overline{A}$ | NOT $A$ | NOT |
+| $A'$ | NOT $A$ | NOT |
 | $A\oplus B$ | exactly one input is 1 | XOR |
 | $A\odot B$ | both inputs are equal | XNOR |
 
@@ -74,7 +76,7 @@ Do not confuse the two formulas:
 Find the smallest $n$ for which $N\le 2^n-1$. Equivalently:
 
 $$
-\boxed{n=\lfloor\log_2N\rfloor+1}\qquad(N\ge1)
+n=\lfloor\log_2N\rfloor+1\qquad(N\ge1)
 $$
 
 For powers of 2, remember the extra bit:
@@ -182,7 +184,7 @@ $$
 (223)_5=2(25)+2(5)+3=63=(3F)_{16}.
 $$
 
-![Kroki diagram: convert a base-6 number to hexadecimal through decimal](assets/base-conversion-flow.svg)
+![Kroki diagram: convert a base-6 number to hexadecimal through decimal](assets/base-conversion-flow.png)
 
 The important idea is the middle step: **decimal is the safe bridge between any two bases**.
 
@@ -332,7 +334,7 @@ $$
 
 The **computational problem** is the highest abstraction because it says *what* must be solved. Each later level adds more detail about *how* it will be solved.
 
-![Kroki diagram: computing transformation hierarchy](assets/abstraction-hierarchy.svg)
+![Kroki diagram: computing transformation hierarchy](assets/abstraction-hierarchy.png)
 
 ### 6.2 Structural/physical design hierarchy
 
@@ -366,17 +368,17 @@ Understanding hardware and software together helps people build better software,
 NOT simply flips a bit:
 
 $$
-\overline0=1,\qquad\overline1=0.
+0'=1,\qquad1'=0.
 $$
 
 NAND and NOR are complemented gates:
 
 $$
-\text{NAND}(A,B)=\overline{AB},
+\text{NAND}(A,B)=(AB)',
 $$
 
 $$
-\text{NOR}(A,B)=\overline{A+B}.
+\text{NOR}(A,B)=(A+B)'.
 $$
 
 ### 7.2 Reading gate diagrams
@@ -396,17 +398,17 @@ These laws are the main tools for Week 2.
 | Identity | $X+0=X$, $X\cdot1=X$ |
 | Null/dominance | $X+1=1$, $X\cdot0=0$ |
 | Idempotent | $X+X=X$, $XX=X$ |
-| Complement | $X+\overline X=1$, $X\overline X=0$ |
-| Double complement | $\overline{\overline X}=X$ |
+| Complement | $X+X'=1$, $XX'=0$ |
+| Double complement | $(X')'=X$ |
 | Commutative | $X+Y=Y+X$, $XY=YX$ |
 | Associative | $(X+Y)+Z=X+(Y+Z)$, $(XY)Z=X(YZ)$ |
 | Distributive | $X(Y+Z)=XY+XZ$ |
 | Boolean distributive | $X+YZ=(X+Y)(X+Z)$ |
 | Absorption | $X+XY=X$, $X(X+Y)=X$ |
-| Useful combining | $X+\overline XY=X+Y$ |
-| Pair removal | $XY+X\overline Y=X$ |
-| POS pair removal | $(X+Y)(X+\overline Y)=X$ |
-| Consensus | $XY+\overline XZ+YZ=XY+\overline XZ$ |
+| Useful combining | $X+X'Y=X+Y$ |
+| Pair removal | $XY+XY'=X$ |
+| POS pair removal | $(X+Y)(X+Y')=X$ |
+| Consensus | $XY+X'Z+YZ=XY+X'Z$ |
 
 Two patterns deserve special attention:
 
@@ -417,7 +419,7 @@ $$
 and
 
 $$
-xy+\overline xy=y(x+\overline x)=y.
+xy+x'y=y(x+x')=y.
 $$
 
 ### Important assignment note about consensus
@@ -425,7 +427,7 @@ $$
 The identity
 
 $$
-xy+yz+\overline{x}z=xy+\overline{x}z
+xy+yz+x'z=xy+x'z
 $$
 
 is mathematically valid: $yz$ is the consensus term and is redundant. `pa2.md` notes that a particular grader did not mark this option, but that grading behavior does not make the identity false. Learn the theorem, while being aware of the saved answer-key inconsistency.
@@ -435,45 +437,47 @@ is mathematically valid: $yz$ is the consensus term and is redundant. `pa2.md` n
 These two laws are essential:
 
 $$
-\boxed{\overline{X+Y}=\overline X\,\overline Y}
+(X+Y)'=X'\,Y'
 $$
 
 $$
-\boxed{\overline{XY}=\overline X+\overline Y}
+(XY)'=X'+Y'
 $$
 
-A simple memory rule is: **break the bar and change the operator**.
+A simple memory rule is: **move NOT inside and change the operator**.
 
 - OR changes to AND.
 - AND changes to OR.
-- Every variable under the bar is complemented.
+- Every variable inside the bracket gets NOT.
 
 Example:
 
 $$
-\overline{(\overline A+B)(C+\overline D)}
+((A'+B)(C+D'))'
 $$
 
-First break the outer bar across the product:
+First move NOT across the outer product:
 
 $$
-=\overline{(\overline A+B)}+\overline{(C+\overline D)}.
+=(A'+B)'+(C+D')'.
 $$
 
-Then break each remaining bar:
+Then move NOT inside each remaining bracket:
 
 $$
-=A\overline B+\overline CD.
+=AB'+C'D.
 $$
 
-The diagram shows the same idea as a circuit: a NOR gate behaves exactly like an AND gate when both inputs are inverted.
+These two circuits have the same output. The first is a NOR circuit; the second is an AND circuit whose inputs are inverted.
 
-![Kroki diagram: De Morgan equivalence between a NOR circuit and an AND circuit with inverted inputs](assets/de-morgan-equivalence.svg)
+![Kroki diagram: NOR circuit for De Morgan's law](assets/de-morgan-nor.png)
 
-If $\overline A$ and $\overline B$ enter a NAND gate, its output is
+![Kroki diagram: AND circuit with inverted inputs for De Morgan's law](assets/de-morgan-inverted-and.png)
+
+If $A'$ and $B'$ enter a NAND gate, its output is
 
 $$
-\overline{\overline A\,\overline B}=A+B.
+(A'\,B')'=A+B.
 $$
 
 ## 10. Duality is not complementation
@@ -482,21 +486,21 @@ To find the **dual** of an expression:
 
 1. Swap every AND and OR.
 2. Swap constants 0 and 1 if present.
-3. Do not change variables or their bars.
+3. Do not change variables or their complements.
 
 Example:
 
 $$
-ABCD+\overline ABCD+A\overline BCD+ABC\overline D
+ABCD+A'BCD+AB'CD+ABCD'
 $$
 
 has dual
 
 $$
-(A+B+C+D)(\overline A+B+C+D)(A+\overline B+C+D)(A+B+C+\overline D).
+(A+B+C+D)(A'+B+C+D)(A+B'+C+D)(A+B+C+D').
 $$
 
-The **complement** of $F$ means $\overline F$ and requires De Morgan's laws. The **dual** is an operator swap. They are different operations.
+The **complement** of $F$ means $F'$ and requires De Morgan's laws. The **dual** is an operator swap. They are different operations.
 
 A self-dual expression is equivalent to its own dual. The three-input majority expression is an example:
 
@@ -508,53 +512,53 @@ $$
 
 Use this dependable order:
 
-1. Remove terms containing $X\overline X$, because they become 0.
+1. Remove terms containing $XX'$, because they become 0.
 2. Remove repeated variables, such as $XX=X$.
 3. Factor common literals.
-4. Look for $X+\overline X=1$.
+4. Look for $X+X'=1$.
 5. Use absorption or a standard pair pattern.
 6. Repeat until nothing changes.
 
 Example:
 
 $$
-(A\overline B(C+BD)+\overline A\,\overline B)C.
+(AB'(C+BD)+A'\,B')C.
 $$
 
 Expand the inner product:
 
 $$
-A\overline BC+A\overline BBD=A\overline BC+0.
+AB'C+AB'BD=AB'C+0.
 $$
 
 Now multiply by the final $C$:
 
 $$
-A\overline BC+\overline A\,\overline BC.
+AB'C+A'\,B'C.
 $$
 
 Factor:
 
 $$
-\overline BC(A+\overline A)=\overline BC.
+B'C(A+A')=B'C.
 $$
 
 Another example:
 
 $$
-(A+\overline B+\overline C)(A+\overline B+C)(A+B+\overline C).
+(A+B'+C')(A+B'+C)(A+B+C').
 $$
 
-Let $X=A+\overline B$. Then
+Let $X=A+B'$. Then
 
 $$
-(X+\overline C)(X+C)=X.
+(X+C')(X+C)=X.
 $$
 
 The expression becomes
 
 $$
-(A+\overline B)(A+B+\overline C)=A+\overline B\,\overline C.
+(A+B')(A+B+C')=A+B'\,C'.
 $$
 
 ## 12. Literals and gate counting
@@ -575,8 +579,8 @@ These are all valid aims of Boolean simplification.
 A **literal** is one appearance of a variable or its complement.
 
 - $A$ has 1 literal.
-- $A\overline BC$ has 3 literals.
-- $AB+\overline AC$ has 4 literal appearances.
+- $AB'C$ has 3 literals.
+- $AB+A'C$ has 4 literal appearances.
 
 Always simplify before counting literals or gates.
 
@@ -590,20 +594,20 @@ For ordinary 2-input AND, OR, and NOT gates:
 Example:
 
 $$
-F=z+x\overline y
+F=z+xy'
 $$
 
 needs:
 
-1. one NOT for $\overline y$;
-2. one AND for $x\overline y$;
+1. one NOT for $y'$;
+2. one AND for $xy'$;
 3. one OR to combine that result with $z$.
 
 Total: 3 gates.
 
 Here is the same simplified expression as a gate-level circuit. Follow the signals from left to right: invert $y$, AND it with $x$, then OR the result with $z$.
 
-![Kroki diagram: gate-level circuit for F equals z OR x AND not y](assets/simplified-logic-circuit.svg)
+![Kroki diagram: gate-level circuit for F equals z OR x AND not y](assets/simplified-logic-circuit.png)
 
 For $AC+ABC$, simplify first:
 
@@ -632,17 +636,17 @@ Different-looking Boolean expressions can have the same truth table. If they mat
 Example:
 
 $$
-xyz+\overline xy+xy\overline z
+xyz+x'y+xyz'
 $$
 
 can be simplified:
 
 $$
-=xy(z+\overline z)+\overline xy
+=xy(z+z')+x'y
 $$
 
 $$
-=xy+\overline xy=y.
+=xy+x'y=y.
 $$
 
 Therefore, its truth-table output is simply the $y$ column.
@@ -657,13 +661,13 @@ A **minterm** contains every variable exactly once and is 1 for exactly one trut
 
 For a minterm:
 
-- row value 0 means complement the variable;
+- row value 0 means add NOT to the variable;
 - row value 1 means leave the variable uncomplemented.
 
 For row $ABC=101$:
 
 $$
-m_5=A\overline BC.
+m_5=AB'C.
 $$
 
 Canonical SOP lists rows where $F=1$:
@@ -676,9 +680,9 @@ For variables $A,B,C$, convert each index to a three-bit binary number:
 
 | Index | Binary | Minterm |
 |---:|:---:|---|
-| 1 | 001 | $\overline A\,\overline B C$ |
-| 3 | 011 | $\overline A B C$ |
-| 5 | 101 | $A\overline B C$ |
+| 1 | 001 | $A'\,B' C$ |
+| 3 | 011 | $A' B C$ |
+| 5 | 101 | $AB' C$ |
 | 7 | 111 | $ABC$ |
 
 All four have $C=1$, so their sum simplifies to $C$.
@@ -692,12 +696,12 @@ A **maxterm** contains every variable exactly once and is 0 for exactly one trut
 For a maxterm, use the opposite-looking rule:
 
 - row value 0 means write the variable uncomplemented;
-- row value 1 means complement the variable.
+- row value 1 means add NOT to the variable.
 
 For row $ABC=101$:
 
 $$
-M_5=(\overline A+B+\overline C).
+M_5=(A'+B+C').
 $$
 
 Why? At $A=1,B=0,C=1$, every literal inside this OR is 0, so the whole maxterm is 0.
@@ -720,16 +724,16 @@ $$
 
 Use this visual decision path whenever a question asks for a canonical expression.
 
-![Kroki diagram: choosing canonical SOP or canonical POS from a truth table](assets/sop-pos-workflow.svg)
+![Kroki diagram: choosing canonical SOP or canonical POS from a truth table](assets/sop-pos-workflow.png)
 
 Inside a term:
 
-- minterm copies a 1 and bars a 0;
-- maxterm copies a 0 and bars a 1.
+- minterm copies a 1 and adds NOT to a 0;
+- maxterm copies a 0 and adds NOT to a 1.
 
 ### 14.4 Complement questions
 
-Maxterms of $\overline F$ come from rows where $\overline F=0$, which are exactly the rows where $F=1$. Always create a tiny extra complement column if this feels confusing.
+Maxterms of $F'$ come from rows where $F'=0$, which are exactly the rows where $F=1$. Always create a tiny extra complement column if this feels confusing.
 
 ## 15. Solving every Week 1–2 question type
 
@@ -755,7 +759,7 @@ Maxterms of $\overline F$ come from rows where $\overline F=0$, which are exactl
 
 ### If the question asks for a Boolean equivalent or minimum form
 
-- Translate bars and gate operations carefully.
+- Translate NOT marks and gate operations carefully.
 - Apply De Morgan from the outside inward.
 - Factor common terms.
 - Search for complements and absorption.
@@ -802,7 +806,7 @@ Maxterms of $\overline F$ come from rows where $\overline F=0$, which are exactl
 6. Treating Boolean `+` as ordinary addition.
 7. Changing complements while taking a dual. Complements stay as they are.
 8. Using 1-rows for POS or 0-rows for SOP.
-9. Applying the minterm bar rule to maxterms. Their rules are opposite.
+9. Applying the minterm NOT rule to maxterms. Their rules are opposite.
 10. Counting gates before simplifying the expression.
 
 ## 17. Coverage map to the four assignment files

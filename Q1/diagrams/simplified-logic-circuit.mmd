@@ -1,7 +1,7 @@
-flowchart LR
-    X["x"] --> AND["AND"]
+flowchart TD
     Y["y"] --> NOT["NOT"]
     NOT --> YB["not y"]
+    X["x"] --> AND["AND"]
     YB --> AND
     AND --> OR["OR"]
     Z["z"] --> OR
