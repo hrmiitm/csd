@@ -1,6 +1,5 @@
 # Week 2 — Graded Assignment 2
 
-> **Score: 90 / 100** | Submitted: Sun, 28 Jun 2026
 
 ---
 
@@ -12,10 +11,15 @@ $$
 AC + ABC
 $$
 
-- **(✓) 1**
+- ( ) 1
 - ( ) 2
 - ( ) 3
 - ( ) 5
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** 1
 
 #### ✏️ Step-by-Step Solution
 
@@ -34,9 +38,9 @@ The simplified expression $AC$ is just an **AND** of two variables, requiring **
 $$
 \boxed{1 \text{ gate}}
 $$
+</details>
 
 ---
-
 ### Q2 — NAND Gate with Inputs $\bar{A}$ and $\bar{B}$
 
 **If $\bar{A}$ and $\bar{B}$ are the inputs to a NAND gate, the equivalent output expression would be:**
@@ -44,7 +48,12 @@ $$
 - ( ) $f = \overline{A} \cdot \overline{B}$
 - ( ) $f = \overline{A} + \overline{B}$
 - ( ) $f = \overline{(\overline{A} + \overline{B})}$
-- **(✓) $f = A + B$**
+- ( ) $f = A + B$
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** $f = A + B$
 
 #### ✏️ Step-by-Step Solution
 
@@ -65,17 +74,22 @@ So the NAND gate with inverted inputs $\overline{A}$ and $\overline{B}$ is equiv
 $$
 \boxed{f = A + B}
 $$
+</details>
 
 ---
-
 ### Q3 — Self-Dual Boolean Expression
 
 **Which of the following Boolean expressions is equivalent to the dual of that expression?**
 
-- **(✓) $F(x, y, z) = xy + yz + xz$**
+- ( ) $F(x, y, z) = xy + yz + xz$
 - ( ) $F(x, y, z) = xyz + yz + xz$
 - ( ) $F(x, y) = \overline{x}y + x\overline{y}$
 - ( ) None of the above
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** $F(x, y, z) = xy + yz + xz$
 
 #### ✏️ Step-by-Step Solution
 
@@ -116,9 +130,9 @@ This is the **majority function** (returns 1 when at least 2 of 3 inputs are 1),
 $$
 \boxed{F(x, y, z) = xy + yz + xz \text{ is self-dual}}
 $$
+</details>
 
 ---
-
 ### Q4 — Equivalent Boolean Expression
 
 **Which of the following Boolean expression is equivalent to the given Boolean expression?**
@@ -130,8 +144,13 @@ $$
 - ( ) $\overline{xy} + \overline{x}z + xy\overline{z}$
 - ( ) $\overline{xy} + \overline{x}z + x\overline{y}z$
 - ( ) $\overline{xy} + \overline{x}y + xy\overline{z}$
-- **(✓) $\overline{x}\overline{y} + \overline{x}z + xy\overline{z}$**
+- ( ) $\overline{x}\overline{y} + \overline{x}z + xy\overline{z}$
 - ( ) None of the above
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** $\overline{x}\overline{y} + \overline{x}z + xy\overline{z}$
 
 #### ✏️ Step-by-Step Solution
 
@@ -151,9 +170,9 @@ $$
 $$
 \boxed{Y = \overline{x}\overline{y} + \overline{x}z + xy\overline{z}}
 $$
+</details>
 
 ---
-
 ### Q5 — Karnaugh Map
 
 **Choose the correct truth table according to the given boolean algebra expression $F(x, y, z) = xyz + \overline{x}y + xy\overline{z}$:**
@@ -196,7 +215,7 @@ $$
   | 1 | 1 | 0 | 1 |
   | 1 | 1 | 1 | 1 |
 
-- **(✓) Option D**
+- ( ) Option D
   | x | y | z | F |
   |:-:|:-:|:-:|:-:|
   | 0 | 0 | 0 | 0 |
@@ -207,6 +226,11 @@ $$
   | 1 | 0 | 1 | 0 |
   | 1 | 1 | 0 | 1 |
   | 1 | 1 | 1 | 1 |
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** Option D
 
 #### ✏️ Step-by-Step Solution
 
@@ -235,9 +259,9 @@ Since $F = y$, $F$ must be 1 whenever $y = 1$, and 0 whenever $y = 0$. This corr
 $$
 \boxed{F = y}
 $$
+</details>
 
 ---
-
 ### Q6 — Identify Gate Types in Circuit (Image-Based)
 
 **The two gates in the circuit below are:**
@@ -245,9 +269,14 @@ $$
 ![Circuit diagram with two gates](assets/gq6.png)
 
 - ( ) OR, OR
-- **(✓) AND, OR**
+- ( ) AND, OR
 - ( ) AND, AND
 - ( ) OR, AND
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** AND, OR
 
 #### ✏️ Step-by-Step Solution
 
@@ -256,9 +285,9 @@ Inspecting the circuit diagram: the first level uses an **AND gate** (outputs 1 
 $$
 \boxed{\text{AND, OR}}
 $$
+</details>
 
 ---
-
 ### Q7 — Canonical SOP from Truth Table
 
 **What is the equivalent canonical SOP expression for the truth table given below?**
@@ -274,10 +303,15 @@ $$
 | 1 | 1 | 0 | 0 |
 | 1 | 1 | 1 | 1 |
 
-- **(✓) Option A** — $\overline{A}.\overline{B}.C + \overline{A}.B.C + A.\overline{B}.C + A.B.C$
+- ( ) **Option A** — $\overline{A}.\overline{B}.C + \overline{A}.B.C + A.\overline{B}.C + A.B.C$
 - ( ) **Option B** — $\overline{A}.\overline{B}.\overline{C} + \overline{A}.B.C + \overline{A}.\overline{B}.C + A.\overline{B}.C$
 - ( ) **Option C** — $\overline{A}.\overline{B}.C + \overline{A}.B.C + A.\overline{B}.\overline{C} + A.B.C$
 - ( ) **Option D** — $A.B.\overline{C} + \overline{A}.B.C + A.\overline{B}.C + A.B.C$
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** Option A — $\overline{A}.\overline{B}.C + \overline{A}.B.C + A.\overline{B}.C + A.B.C$
 
 #### ✏️ Step-by-Step Solution
 
@@ -297,9 +331,9 @@ F = \overline{A}.\overline{B}.C + \overline{A}.B.C + A.\overline{B}.C + A.B.C
 $$
 
 This matches **Option A**.
+</details>
 
 ---
-
 ### Q8 — SOP Expression for Circuit
 
 **Choose the equivalent canonical Sum of Products form for the given circuit:**
@@ -307,9 +341,14 @@ This matches **Option A**.
 ![Circuit diagram](assets/gq8.png)
 
 - ( ) $\overline{A}.\overline{B}.\overline{C} + \overline{A}.B.\overline{C} + \overline{A}.\overline{B}.C + A.B.\overline{C}$
-- **(✓) $\overline{A}.\overline{B}.\overline{C} + \overline{A}.\overline{B}.C + A.\overline{B}.\overline{C} + A.\overline{B}.C$**
+- ( ) $\overline{A}.\overline{B}.\overline{C} + \overline{A}.\overline{B}.C + A.\overline{B}.\overline{C} + A.\overline{B}.C$
 - ( ) $A.\overline{B}.\overline{C} + A.B.C + A.\overline{B}.C + \overline{A}.B.\overline{C}$
 - ( ) $A.B.C + \overline{A}.B.C + A.\overline{B}.C + A.B.\overline{C}$
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** $\overline{A}.\overline{B}.\overline{C} + \overline{A}.\overline{B}.C + A.\overline{B}.\overline{C} + A.\overline{B}.C$
 
 #### ✏️ Step-by-Step Solution
 
@@ -332,17 +371,22 @@ $$
 $$
 
 This is exactly the expression in **Option B** (using dot notation).
+</details>
 
 ---
-
 ### Q9 — Minimized Boolean Expression
 
 **Which of the following is the minimized form of the boolean expression $(A+\overline{B}+\overline{C})(A+\overline{B}+C)(A+B+\overline{C})$?**
 
-- **(✓) $A + \overline{B}.\overline{C}$**
+- ( ) $A + \overline{B}.\overline{C}$
 - ( ) $\overline{A} + \overline{B}.\overline{C}.D$
 - ( ) $A.\overline{B} + C.\overline{A}$
 - ( ) $A + B.\overline{C}$
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** $A + \overline{B}.\overline{C}$
 
 #### ✏️ Step-by-Step Solution
 
@@ -387,9 +431,9 @@ $$
 $$
 \boxed{A + \overline{B}.\overline{C}}
 $$
+</details>
 
 ---
-
 ### Q10 — SOP Expression for Minterms Σm(1, 3, 5, 7)
 
 **From the given options identify the equivalent SOP expression for a Boolean function with variables A, B and C, where minterms are: Σm(1, 3, 5, 7)**
@@ -398,7 +442,12 @@ $$
 - ( ) $\overline{A}.\overline{B}.C + \overline{A}.B.C + A.\overline{B}.C + A.B.\overline{C}$
 - ( ) $\overline{A}.\overline{B}.C + \overline{A}.B.C + \overline{A}.B.\overline{C} + A.B.\overline{C}$
 - ( ) $\overline{A}.\overline{B}.C + \overline{A}.B.C + A.\overline{B}.\overline{C} + A.B.\overline{C}$
-- **(✓) $\overline{A}.\overline{B}.C + \overline{A}.B.C + A.\overline{B}.C + A.B.C$**
+- ( ) $\overline{A}.\overline{B}.C + \overline{A}.B.C + A.\overline{B}.C + A.B.C$
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** $\overline{A}.\overline{B}.C + \overline{A}.B.C + A.\overline{B}.C + A.B.C$
 
 #### ✏️ Step-by-Step Solution
 
@@ -430,3 +479,4 @@ This matches the expression in **Option 5** (last option).
 $$
 \boxed{F = C}
 $$
+</details>

@@ -1,6 +1,5 @@
 # Week 4 — Graded Assignment 4
 
-> **Score: 100 / 100** | Submitted: Sun, 12 Jul 2026
 
 ---
 
@@ -8,10 +7,15 @@
 
 **Find the equivalent Boolean Expression for A > B, in a two bit comparator circuit having inputs $A_1A_0$ and $B_1B_0$.**
 
-- **(✓) $A_1\overline{B_1} + A_0\overline{B_1}\ \overline{B_0} + A_1A_0\overline{B_0}$**
+- ( ) $A_1\overline{B_1} + A_0\overline{B_1}\ \overline{B_0} + A_1A_0\overline{B_0}$
 - ( ) $\overline{A_1B_1} + A_0\overline{B_1B_0} + A_1A_0\overline{B_0}$
 - ( ) $A_1A_0B_1 + A_1\overline{B_1} + A_0\overline{B_1B_0}$
 - ( ) $\overline{A_1}A_0 + A_1\overline{B_1} + A_0\overline{B_1B_0}$
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** $A_1\overline{B_1} + A_0\overline{B_1}\ \overline{B_0} + A_1A_0\overline{B_0}$
 
 #### ✏️ Step-by-Step Solution
 
@@ -67,17 +71,22 @@ f(A>B) = A_1\overline{B_1} + A_0 \overline{B_1}\ \overline{B_0} + A_1 A_0 \overl
 $$
 
 This matches the **first option**.
+</details>
 
 ---
-
 ### Q2 — BCD Encoder: Minimum OR Gates
 
 **If we implement a BCD encoder circuit using OR gates, what is the minimum number of OR gates (maximum 5 inputs can be used) required?**
 
 - ( ) 5
 - ( ) 3
-- **(✓) 4**
+- ( ) 4
 - ( ) 6
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** 4
 
 #### ✏️ Step-by-Step Solution
 
@@ -128,9 +137,9 @@ Total: **4 OR gates** (each with at most 5 inputs).
 $$
 \boxed{4 \text{ OR gates}}
 $$
+</details>
 
 ---
-
 ### Q3 — Minimum 2:1 Multiplexers for Circuit
 
 **Consider the circuit shown below.**
@@ -140,6 +149,9 @@ $$
 **If you want to implement the same logic using only 2:1 multiplexers, what is the minimum number of 2:1 multiplexers required?**
 
 *(Numeric input)*
+
+<details>
+<summary><b>Answer & Solution</b></summary>
 
 **Answer: $\boxed{2}$**
 
@@ -159,9 +171,9 @@ For a 2-variable function, we need **2** cascaded 2:1 multiplexers.
 $$
 \boxed{2}
 $$
+</details>
 
 ---
-
 ### Q4 — Canonical SOP Expression from Circuit
 
 **Consider the circuit shown below.**
@@ -183,9 +195,7 @@ Consider the circuit given below for questions 5 & 6:
 
 ![Circuit for Q5 and Q6](assets/w4ga5-6.png)
 
----
-
-### Q5 — Output Expression F for Given Circuit
+---### Q5 — Output Expression F for Given Circuit
 
 **The output expression F for the given circuit will be:**
 
@@ -194,9 +204,7 @@ Consider the circuit given below for questions 5 & 6:
 - ( ) $\overline{S_2}\,\overline{S_3}(S_1 \odot W) + S_2\overline{S_3}W + S_3\overline{W}$
 - ( ) $\overline{S_2}\,\overline{S_1}(S_3 \oplus W) + S_2\overline{S_3}\,\overline{W} + S_3 W$
 
----
-
-### Q6 — Output F with Interchanged Inputs for Second MUX
+---### Q6 — Output F with Interchanged Inputs for Second MUX
 
 **If the inputs are interchanged for the second multiplexer, then output F for the given circuit will be:**
 
@@ -211,9 +219,7 @@ Consider the circuit given below for questions 5 & 6:
 
 Questions 7–10 cover decoders, RAM, priority encoders, and other combinational circuits.
 
----
-
-### Q7 — Circuit Identification
+---### Q7 — Circuit Identification
 
 **What is the output expression for the given decoder/logic circuit?**
 
@@ -224,16 +230,19 @@ Questions 7–10 cover decoders, RAM, priority encoders, and other combinational
 - ( ) $\overline{Y_2}Y_1(Y_0 \odot Y_3)$
 - ( ) $\overline{Y_2}Y_1(\overline{Y_0} \oplus Y_3)$
 
----
-
-### Q8 — Number of 2-to-4 Decoders for 64K × 32 RAM
+---### Q8 — Number of 2-to-4 Decoders for 64K × 32 RAM
 
 **A RAM chip has a capacity of 2048 words of 8 bits each i.e (2K × 8). The number of 2-to-4 decoders with enable lines, that are required to construct a 64K × 32 RAM from 2K × 8 RAM:**
 
-- **(✓) 10**
+- ( ) 10
 - ( ) 20
 - ( ) 16
 - ( ) 32
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** 10
 
 #### ✏️ Step-by-Step Solution
 
@@ -276,9 +285,9 @@ Using a hierarchical approach:
 $$
 \boxed{10}
 $$
+</details>
 
 ---
-
 ### Q9 — Identify the Circuit (Priority Encoder)
 
 **Identify the given circuit:**
@@ -287,8 +296,13 @@ $$
 
 - ( ) Decoder
 - ( ) 2 × 1 Multiplexer
-- **(✓) Priority Encoder**
+- ( ) Priority Encoder
 - ( ) Comparator
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** Priority Encoder
 
 #### ✏️ Step-by-Step Solution
 
@@ -307,14 +321,17 @@ This matches the behavior of a **Priority Encoder**.
 $$
 \boxed{\text{Priority Encoder}}
 $$
+</details>
 
 ---
-
 ### Q10 — Decoder for 512 TV Channels: Find m − n
 
 **Suppose there are 512 TV channels. We have $m$ output lines and $n$ input lines for the decoder to address them uniquely. Find the value of $m - n$.**
 
 *(Numeric input)*
+
+<details>
+<summary><b>Answer & Solution</b></summary>
 
 **Answer: $\boxed{503}$**
 
@@ -341,3 +358,4 @@ $$
 $$
 m - n = 512 - 9 = \boxed{503}
 $$
+</details>

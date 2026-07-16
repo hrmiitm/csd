@@ -1,6 +1,5 @@
 # Week 1 — Graded Assignment 1
 
-> **Score: 100 / 100** | Submitted: Sun, 21 Jun 2026
 
 ---
 
@@ -9,6 +8,9 @@
 **What is the minimum number of bits required to represent the number $(32)_{10}$ in binary?**
 
 *(Numeric input)*
+
+<details>
+<summary><b>Answer & Solution</b></summary>
 
 **Answer: $\boxed{6}$**
 
@@ -31,17 +33,22 @@ The minimum number of bits to represent $N$ in binary is $\lfloor \log_2 N \rflo
 $$
 \lfloor \log_2 32 \rfloor + 1 = \lfloor 5 \rfloor + 1 = 5 + 1 = \boxed{6}
 $$
+</details>
 
 ---
-
 ### Q2 — Moore's Law: Transistor Count After 8 Years
 
 **According to Moore's law, if a computer system has 2 million transistors today, approximately how many transistors would it have in 8 years?**
 
 - ( ) 16 million transistors
 - ( ) 8 million transistors
-- **(✓) 32 million transistors**
+- ( ) 32 million transistors
 - ( ) Cannot be determined
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** 32 million transistors
 
 #### ✏️ Step-by-Step Solution
 
@@ -66,9 +73,9 @@ $$
 $$
 \boxed{32 \text{ million transistors}}
 $$
+</details>
 
 ---
-
 ### Q3 — Base Conversion: $(3451)_a = (1417)_b$
 
 **If $(3451)_a = (1417)_b$, where $a$ and $b$ indicate the bases of the corresponding numbers, then what are the values of $a$ and $b$?**
@@ -76,7 +83,12 @@ $$
 - ( ) a = 7, b = 12
 - ( ) a = 8, b = 10
 - ( ) a = 9, b = 11
-- **(✓) a = 8, b = 11**
+- ( ) a = 8, b = 11
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** a = 8, b = 11
 
 #### ✏️ Step-by-Step Solution
 
@@ -101,14 +113,17 @@ $$
 $$
 \boxed{a = 8,\quad b = 11}
 $$
+</details>
 
 ---
-
 ### Q4 — Quadratic Equation: Find the Base
 
 **The solutions to the quadratic equation $x^2 - 11x + 21 = 0$ are $x = 3$ and $x = 5$. What is the base of the numbers?**
 
 *(Numeric input)*
+
+<details>
+<summary><b>Answer & Solution</b></summary>
 
 **Answer: $\boxed{7}$**
 
@@ -133,17 +148,22 @@ For roots $r_1 = 3$ and $r_2 = 5$:
 $$
 \boxed{b = 7}
 $$
+</details>
 
 ---
-
 ### Q5 — Highest Level of Abstraction in Computing Hierarchy
 
 **What is the highest level of abstraction in the transformation hierarchy for computing systems?**
 
 - ( ) Algorithms
 - ( ) Programming Languages
-- **(✓) Computational Problem**
+- ( ) Computational Problem
 - ( ) System Software
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** Computational Problem
 
 #### ✏️ Step-by-Step Solution
 
@@ -162,14 +182,17 @@ A **Computational Problem** is the most abstract — it specifies *what* needs t
 $$
 \boxed{\text{Computational Problem}}
 $$
+</details>
 
 ---
-
 ### Q6 — Convert Binary to Decimal: $(11001)_2$
 
 **Convert $(11001)_2$ into decimal.**
 
 *(Numeric input)*
+
+<details>
+<summary><b>Answer & Solution</b></summary>
 
 **Answer: $\boxed{25}$**
 
@@ -184,17 +207,22 @@ $$
 $$
 = 16 + 8 + 0 + 0 + 1 = \boxed{25}
 $$
+</details>
 
 ---
-
 ### Q7 — Largest 16-bit Binary Number in Decimal
 
 **What is the decimal equivalent of the largest binary number possible to obtain with 16 bits?**
 
 - ( ) 65789
-- **(✓) 65535**
+- ( ) 65535
 - ( ) 64321
 - ( ) 65998
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** 65535
 
 #### ✏️ Step-by-Step Solution
 
@@ -211,17 +239,22 @@ $$
 $$
 2^{16} - 1 = 65536 - 1 = \boxed{65535}
 $$
+</details>
 
 ---
-
 ### Q8 — Voltage Interpretation: Illegal Voltage
 
 **In a system if $V_L = 3.56$ and $V_H = 3.97$, then a voltage of 3.58 will be:**
 
 - ( ) Interpreted as 0
 - ( ) Interpreted as 1
-- **(✓) Interpreted as illegal voltage**
+- ( ) Interpreted as illegal voltage
 - ( ) None of the above
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** Interpreted as illegal voltage
 
 #### ✏️ Step-by-Step Solution
 
@@ -243,9 +276,9 @@ The voltage 3.58 falls in the forbidden zone between $V_L$ and $V_H$.
 $$
 \boxed{\text{Interpreted as illegal voltage}}
 $$
+</details>
 
 ---
-
 ### Q9 — Base Conversion: 421 in Base 5 → Base ?
 
 **The number 421 in base 5 system is equivalent to 157 in which base system?**
@@ -253,7 +286,12 @@ $$
 - ( ) 6
 - ( ) 9
 - ( ) 7
-- **(✓) 8**
+- ( ) 8
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** 8
 
 #### ✏️ Step-by-Step Solution
 
@@ -284,9 +322,9 @@ $$
 $$
 \boxed{b = 8}
 $$
+</details>
 
 ---
-
 ### Q10 — Base 5 Number 223 in Hexadecimal
 
 **If the representation of a number in base 5 is 223, then what will be its hexadecimal representation?**
@@ -295,7 +333,12 @@ $$
 - ( ) 2E
 - ( ) 40
 - ( ) 53
-- **(✓) 3F**
+- ( ) 3F
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** 3F
 
 #### ✏️ Step-by-Step Solution
 
@@ -314,18 +357,23 @@ $$
 $$
 \boxed{(3F)_{16}}
 $$
+</details>
 
 ---
-
 ### Q11 — Base 6 Number 245 in Hexadecimal
 
 **If the representation of a number in **base 6** is **245**, what will be its **hexadecimal** representation?**
 
 - ( ) 5F
-- **(✓) 65**
+- ( ) 65
 - ( ) 6B
 - ( ) 71
 - ( ) None of the above
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** 65
 
 #### ✏️ Step-by-Step Solution
 
@@ -344,3 +392,4 @@ $$
 $$
 \boxed{(65)_{16}}
 $$
+</details>

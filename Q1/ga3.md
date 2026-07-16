@@ -1,6 +1,5 @@
 # Week 3 — Graded Assignment 3
 
-> **Score: 80 / 100** | Submitted: Sun, 05 Jul 2026
 
 ---
 
@@ -9,6 +8,9 @@
 **What is the minimum number of NAND gates required to design the circuit that implements the function $f(x_1, x_2, x_3) = \sum m(4, 6, 7)$?**
 
 *(Numeric input)*
+
+<details>
+<summary><b>Answer & Solution</b></summary>
 
 **Answer: $\boxed{4}$**
 
@@ -55,9 +57,9 @@ Total NAND gates required = **4 gates**.
 $$
 \boxed{4}
 $$
+</details>
 
 ---
-
 ### Q2 — Simplify Boolean Expression
 
 **Write the equivalent POS expression for: $A.\overline{B}.C + \overline{A}.B.C + A.B.\overline{C} + \overline{A}.\overline{B}.C$**
@@ -65,7 +67,12 @@ $$
 - ( ) $(\overline{A} + \overline{B} + \overline{C})(A + \overline{B} + \overline{C})(\overline{A} + \overline{B} + C)(A + B + C)$
 - ( ) $(\overline{A} + B + \overline{C})(A + B + C)(A + B + \overline{C})(A + \overline{B} + \overline{C})$
 - ( ) $(\overline{A} + B + C)(A + \overline{B} + C)(\overline{A} + \overline{B} + \overline{C})(A + B + \overline{C})$
-- **(✓) $(A + B + C)(A + \overline{B} + C)(\overline{A} + B + C)(\overline{A} + \overline{B} + \overline{C})$**
+- ( ) $(A + B + C)(A + \overline{B} + C)(\overline{A} + B + C)(\overline{A} + \overline{B} + \overline{C})$
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** $(A + B + C)(A + \overline{B} + C)(\overline{A} + B + C)(\overline{A} + \overline{B} + \overline{C})$
 
 #### ✏️ Step-by-Step Solution
 
@@ -102,14 +109,17 @@ F = (A + B + C)(A + \overline{B} + C)(\overline{A} + B + C)(\overline{A} + \over
 $$
 
 This matches the **fourth option**.
+</details>
 
 ---
-
 ### Q3 — Expression Evaluation
 
 **What is the minimum number of NOR gates required to implement the circuit for the minimized SOP expression for the function $f(x_1, x_2, x_3) = \prod M(1, 3, 5, 7)$?**
 
 *(Numeric input)*
+
+<details>
+<summary><b>Answer & Solution</b></summary>
 
 **Answer: $\boxed{1}$**
 
@@ -142,14 +152,17 @@ This requires **1 NOR gate**.
 $$
 \boxed{1}
 $$
+</details>
 
 ---
-
 ### Q4 — Expression Evaluation
 
 **Find the number of maxterms in the equivalent truth table of the function: $(\overline{A}BC + AB\overline{D})(CD + \overline{C}.\overline{D})(\overline{A} + B + D)$**
 
 *(Numeric input)*
+
+<details>
+<summary><b>Answer & Solution</b></summary>
 
 **Answer: $\boxed{14}$**
 
@@ -199,9 +212,9 @@ $$
 Consider the circuit shown below for questions 5, 6, and 7:
 
 ![Circuit diagram for Q5, Q6, Q7](assets/w3q5-6-7.png)
+</details>
 
 ---
-
 ### Q5 — Boolean Expression for the Circuit
 
 **What is the equivalent boolean expression for the circuit above?**
@@ -211,9 +224,7 @@ Consider the circuit shown below for questions 5, 6, and 7:
 - ( ) $xy + \overline{xy}$
 - **(✓) None of the above**
 
----
-
-### Q6 — Minimum NOR Gates Required
+---### Q6 — Minimum NOR Gates Required
 
 **Suppose we only have 2-input NOR gates, and we want to represent the above circuit diagram using only 2-input NOR gates. What is the minimum number of 2-input NOR gates required?**
 
@@ -221,9 +232,7 @@ Consider the circuit shown below for questions 5, 6, and 7:
 
 **Answer: $\boxed{2}$**
 
----
-
-### Q7 — Minimum NAND Gates Required
+---### Q7 — Minimum NAND Gates Required
 
 **Suppose we only have 2-input NAND gates, and we want to represent the above circuit diagram using only 2-input NAND gates. What is the minimum number of 2-input NAND gates required?**
 
@@ -239,9 +248,7 @@ Consider the circuit shown below for questions 5, 6, and 7:
 
 Questions 8–10 are based on the timing diagram below.
 
----
-
-### Q8 — Minimum XOR Gates for Timing Diagram
+---### Q8 — Minimum XOR Gates for Timing Diagram
 
 **Answer the question based on the given timing diagram.**
 
@@ -250,6 +257,9 @@ Questions 8–10 are based on the timing diagram below.
 **Given that we only have 2-input XOR gates, what is the minimum number of XOR gates needed to represent the timing diagram above?**
 
 *(Numeric input)*
+
+<details>
+<summary><b>Answer & Solution</b></summary>
 
 **Answer: $\boxed{2}$**
 
@@ -272,19 +282,24 @@ This requires **2** two-input XOR gates.
 $$
 \boxed{2}
 $$
+</details>
 
 ---
-
 ### Q9 — Inputs for Output Y Always 1
 
 **Identify the correct inputs for A, B, and C such that the output Y is always 1.**
 
 ![Circuit for Q9](assets/w3ga9.png)
 
-- **(✓) 1 or more inputs are at logic 1**
+- ( ) 1 or more inputs are at logic 1
 - ( ) 1 or more inputs are at logic 0
 - ( ) 2 or more inputs are at logic 0
 - ( ) None of the above
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** 1 or more inputs are at logic 1
 
 #### ✏️ Step-by-Step Solution
 
@@ -303,19 +318,24 @@ $$
 $$
 \boxed{\text{1 or more inputs are at logic 1}}
 $$
+</details>
 
 ---
-
 ### Q10 — Output Independent of Which Variable?
 
 **Consider the circuit shown below. Given that the inputs are supplied uniformly and randomly, the output of the given circuit diagram is independent of......**
 
 ![Circuit for Q10](assets/w3ga10.png)
 
-- **(✓) x, w and z**
+- ( ) x, w and z
 - ( ) x and w
 - ( ) y
 - ( ) w
+
+<details>
+<summary><b>Answer & Solution</b></summary>
+
+**Answer:** x, w and z
 
 #### ✏️ Step-by-Step Solution
 
@@ -330,3 +350,4 @@ After Boolean simplification of the circuit, the output depends **only on $y$**,
 $$
 \boxed{\text{Output is independent of } x, w, \text{ and } z}
 $$
+</details>
