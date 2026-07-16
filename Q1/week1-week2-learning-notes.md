@@ -2,6 +2,19 @@
 
 These notes teach the ideas needed for every question in `ga1.md`, `pa1.md`, `ga2.md`, and `pa2.md`. Read this file in order the first time. The companion [quick notes](week1-week2-quick-notes.md) are for revision after the ideas make sense.
 
+> **Best way to learn:** Read Sections 2, 3, 8, 9, and 14 first. They contain the formulas and rules used most often. Then use Section 15 as your question-solving checklist and the [quick notes](week1-week2-quick-notes.md) for revision.
+
+## Start here — the 6 rules to remember
+
+| Rule | What it solves |
+|---|---|
+| $n$ bits make $2^n$ patterns | Character capacity and number of values |
+| Largest unsigned $n$-bit value is $2^n-1$ | Largest binary number |
+| Convert base $b$ using powers of $b$ | All number-base conversions |
+| Every digit must be smaller than its base | Unknown-base questions |
+| Break a bar, swap AND/OR | De Morgan questions |
+| SOP uses 1-rows; POS uses 0-rows | Minterms and maxterms |
+
 ## 1. The language used in these notes
 
 A **bit** is one binary digit. It can be either `0` or `1`.
@@ -351,11 +364,11 @@ $$
 NAND and NOR are complemented gates:
 
 $$
-\operatorname{NAND}(A,B)=\overline{AB},
+\text{NAND}(A,B)=\overline{AB},
 $$
 
 $$
-\operatorname{NOR}(A,B)=\overline{A+B}.
+\text{NOR}(A,B)=\overline{A+B}.
 $$
 
 ### 7.2 Reading gate diagrams

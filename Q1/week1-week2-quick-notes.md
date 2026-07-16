@@ -2,6 +2,19 @@
 
 Use this as a last-minute revision sheet after reading the [full learning notes](week1-week2-learning-notes.md).
 
+> **Read these first:** bit formulas, base rules, De Morgan's laws, and the SOP/POS table. Together they solve most Week 1–2 questions.
+
+## The 6 must-remember rules
+
+| Rule | Meaning |
+|---|---|
+| $2^n$ | number of patterns from $n$ bits |
+| $2^n-1$ | largest unsigned $n$-bit value |
+| digit $<b$ | a digit must be smaller than its base |
+| base conversion | use place values, then repeated division |
+| De Morgan | break the bar and swap AND/OR |
+| SOP/POS | SOP uses 1-rows; POS uses 0-rows |
+
 ## Bits
 
 $$
