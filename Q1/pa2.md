@@ -24,9 +24,7 @@ The left-hand side of the equation is $\overline{(x + y)}$, which represents a *
 The right-hand side is $\overline{x} \cdot \overline{y}$, which represents an **AND** operation with inverted inputs (both $x$ and $y$ are passed through NOT gates before entering the AND gate).
 **Step 2 — Map to logical gate equivalents.**
 By equating the two sides:
-$$
-\text{NOR}(x, y) = \text{AND}(\overline{x}, \overline{y})
-$$
+$\displaystyle \text{NOR}(x, y) = \text{AND}(\overline{x}, \overline{y})$
 Therefore, there is no logical difference between a **NOR gate** and an **AND gate with inverted inputs**.
 </details>
 
@@ -75,35 +73,21 @@ $$
 
 **Step 1 — Expand the expression.**
 Distribute $A\overline{B}$ inside the parentheses:
-$$
-A\overline{B}(C + BD) = A\overline{B}C + A\overline{B}BD
-$$
+$\displaystyle A\overline{B}(C + BD) = A\overline{B}C + A\overline{B}BD$
 Since $B \cdot \overline{B} = 0$:
-$$
-A\overline{B}BD = 0 \implies A\overline{B}(C + BD) = A\overline{B}C
-$$
+$\displaystyle A\overline{B}BD = 0 \implies A\overline{B}(C + BD) = A\overline{B}C$
 **Step 2 — Substitute back into the main expression.**
 Now substitute $A\overline{B}C$ back:
-$$
-(A\overline{B}C + \overline{A}\cdot\overline{B})C
-$$
+$\displaystyle (A\overline{B}C + \overline{A}\cdot\overline{B})C$
 Distribute $C$ inside the outer parentheses:
-$$
-(A\overline{B}C)C + \overline{A}\cdot\overline{B}C
-$$
+$\displaystyle (A\overline{B}C)C + \overline{A}\cdot\overline{B}C$
 Since $C \cdot C = C$:
-$$
-A\overline{B}C + \overline{A}\cdot\overline{B}C
-$$
+$\displaystyle A\overline{B}C + \overline{A}\cdot\overline{B}C$
 **Step 3 — Factor out common terms.**
 Factor out $\overline{B}C$:
-$$
-(A + \overline{A})\overline{B}C
-$$
+$\displaystyle (A + \overline{A})\overline{B}C$
 Since $A + \overline{A} = 1$:
-$$
-1 \cdot \overline{B}C = \boxed{\overline{B}C}
-$$
+$\displaystyle 1 \cdot \overline{B}C = \boxed{\overline{B}C}$
 </details>
 
 ---
@@ -131,15 +115,11 @@ The dual of a Boolean expression is obtained by:
 3. Keeping the variables and their complements exactly the same.
 **Step 2 — Apply the rules to the expression.**
 Given function:
-$$
-F = (A \cdot B \cdot C \cdot D) + (\overline{A} \cdot B \cdot C \cdot D) + (A \cdot \overline{B} \cdot C \cdot D) + (A \cdot B \cdot C \cdot \overline{D})
-$$
+$\displaystyle F = (A \cdot B \cdot C \cdot D) + (\overline{A} \cdot B \cdot C \cdot D) + (A \cdot \overline{B} \cdot C \cdot D) + (A \cdot B \cdot C \cdot \overline{D})$
 Applying duality:
 - Replace the product terms with sums: $ABCD \rightarrow (A + B + C + D)$
 - Replace the addition ($+$) connecting the terms with multiplication ($\cdot$):
-$$
-F_{\text{dual}} = \boxed{(A + B + C + D)(\overline{A} + B + C + D)(A + \overline{B} + C + D)(A + B + C + \overline{D})}
-$$
+$\displaystyle F_{\text{dual}} = \boxed{(A + B + C + D)(\overline{A} + B + C + D)(A + \overline{B} + C + D)(A + B + C + \overline{D})}$
 </details>
 
 ---
@@ -157,34 +137,20 @@ $$
 #### ✏️ Step-by-Step Solution
 
 **Step 1 — Expand the expression.**
-$$
-F = \overline{A}B\overline{D} + \overline{A}B\overline{C}D + AB + \overline{A}BCD
-$$
+$\displaystyle F = \overline{A}B\overline{D} + \overline{A}B\overline{C}D + AB + \overline{A}BCD$
 **Step 2 — Combine and simplify terms.**
 Group the terms containing $\overline{A}BD$:
-$$
-\overline{A}B\overline{C}D + \overline{A}BCD = \overline{A}BD(\overline{C} + C)
-$$
+$\displaystyle \overline{A}B\overline{C}D + \overline{A}BCD = \overline{A}BD(\overline{C} + C)$
 Since $\overline{C} + C = 1$:
-$$
-\overline{A}BD(\overline{C} + C) = \overline{A}BD
-$$
+$\displaystyle \overline{A}BD(\overline{C} + C) = \overline{A}BD$
 Now substitute this back:
-$$
-F = \overline{A}B\overline{D} + \overline{A}BD + AB
-$$
+$\displaystyle F = \overline{A}B\overline{D} + \overline{A}BD + AB$
 Group the first two terms:
-$$
-\overline{A}B\overline{D} + \overline{A}BD = \overline{A}B(\overline{D} + D) = \overline{A}B
-$$
+$\displaystyle \overline{A}B\overline{D} + \overline{A}BD = \overline{A}B(\overline{D} + D) = \overline{A}B$
 Now we have:
-$$
-F = \overline{A}B + AB
-$$
+$\displaystyle F = \overline{A}B + AB$
 Factor out $B$:
-$$
-F = B(\overline{A} + A) = B \cdot 1 = B
-$$
+$\displaystyle F = B(\overline{A} + A) = B \cdot 1 = B$
 **Step 3 — Count the literals.**
 The fully simplified expression is $F = B$, which contains only **1 literal** (the variable $B$).
 </details>
@@ -207,21 +173,15 @@ The fully simplified expression is $F = B$, which contains only **1 literal** (t
 **Step 1 — Analyze option 1 & 2.**
 Let $A = (x + y)$. The expression is $\overline{A} \cdot A$.
 According to the complement law of Boolean algebra:
-$$
-\overline{A} \cdot A = 0
-$$
+$\displaystyle \overline{A} \cdot A = 0$
 Thus, $\overline{(x + y)}(x + y) = 0$ is **correct** (and $= 1$ is incorrect).
 **Step 2 — Analyze option 3.**
 The identity $xy + yz + \overline{x}z = xy + \overline{x}z$ is the **Consensus Theorem**. Although mathematically valid, based on the grading criteria of this specific assignment, it is not marked as correct in the selection. We select only the primary identity options.
 **Step 3 — Analyze option 4.**
 Factor out $x$:
-$$
-x\cdot y + x\cdot\overline{y} = x(y + \overline{y})
-$$
+$\displaystyle x\cdot y + x\cdot\overline{y} = x(y + \overline{y})$
 Since $y + \overline{y} = 1$:
-$$
-x(1) = x
-$$
+$\displaystyle x(1) = x$
 Thus, $x\cdot y + x\cdot\overline{y} = x$ is **correct**.
 </details>
 
@@ -238,9 +198,7 @@ Thus, $x\cdot y + x\cdot\overline{y} = x$ is **correct**.
 
 **Step 1 — Write the minterm expansion and simplify.**
 The function is:
-$$
-F(x, y, z) = \sum m(1, 3, 4, 5, 7) = \overline{x}\overline{y}z + \overline{x}yz + x\overline{y}\overline{z} + x\overline{y}z + xyz
-$$
+$\displaystyle F(x, y, z) = \sum m(1, 3, 4, 5, 7) = \overline{x}\overline{y}z + \overline{x}yz + x\overline{y}\overline{z} + x\overline{y}z + xyz$
 Let's group the terms to simplify using boolean algebra or a K-map:
 - $\overline{x}\overline{y}z + \overline{x}yz = \overline{x}z(\overline{y} + y) = \overline{x}z$
 - $x\overline{y}\overline{z} + x\overline{y}z = x\overline{y}(\overline{z} + z) = x\overline{y}$
@@ -248,9 +206,7 @@ Let's group the terms to simplify using boolean algebra or a K-map:
 - Combine $\overline{x}z + xyz = z(\overline{x} + xy) = z(\overline{x} + y) = \overline{x}z + yz$
 - So $F = x\overline{y} + \overline{x}z + yz$. By consensus theorem, $yz$ is redundant because of $x\overline{y}$ and $\overline{x}z$.
 - Thus, the minimized expression is:
-$$
-F = x\overline{y} + z
-$$
+$\displaystyle F = x\overline{y} + z$
 Let's verify using K-map groups:
 - Group 1 (minterms 1, 3, 5, 7): $z$
 - Group 2 (minterms 4, 5): $x\overline{y}$
@@ -304,23 +260,15 @@ A single Boolean function (represented by a unique truth table) can be written i
 **Step 1 — Apply De Morgan's Law.**
 De Morgan's law states that $\overline{X \cdot Y} = \overline{X} + \overline{Y}$.
 Let $X = (\overline{A} + B)$ and $Y = (C + \overline{D})$:
-$$
-\overline{(\overline{A} + B) \cdot (C + \overline{D})} = \overline{(\overline{A} + B)} + \overline{(C + \overline{D})}
-$$
+$\displaystyle \overline{(\overline{A} + B) \cdot (C + \overline{D})} = \overline{(\overline{A} + B)} + \overline{(C + \overline{D})}$
 **Step 2 — Simplify each term.**
 Apply De Morgan's law to the individual parts ($\overline{U + V} = \overline{U} \cdot \overline{V}$):
 1. First term:
-$$
-\overline{(\overline{A} + B)} = \overline{\overline{A}} \cdot \overline{B} = A\overline{B}
-$$
+$\displaystyle \overline{(\overline{A} + B)} = \overline{\overline{A}} \cdot \overline{B} = A\overline{B}$
 2. Second term:
-$$
-\overline{(C + \overline{D})} = \overline{C} \cdot \overline{\overline{D}} = \overline{C}D
-$$
+$\displaystyle \overline{(C + \overline{D})} = \overline{C} \cdot \overline{\overline{D}} = \overline{C}D$
 **Step 3 — Combine the simplified parts.**
-$$
-A\overline{B} + \overline{C}D
-$$
+$\displaystyle A\overline{B} + \overline{C}D$
 This matches the option **$A\cdot\overline{B} + \overline{C}\cdot D$**.
 </details>
 
@@ -356,23 +304,13 @@ For a maxterm, an input variable is written as:
 - Complemented if its value is $1$.
 **Step 2 — Identify the rows where $F = 0$.**
 1. Row $1$ ($A=0, B=0, C=1$):
-$$
-\text{Maxterm} = (A + B + \overline{C})
-$$
+$\displaystyle \text{Maxterm} = (A + B + \overline{C})$
 2. Row $2$ ($A=0, B=1, C=0$):
-$$
-\text{Maxterm} = (A + \overline{B} + C)
-$$
+$\displaystyle \text{Maxterm} = (A + \overline{B} + C)$
 3. Row $6$ ($A=1, B=1, C=0$):
-$$
-\text{Maxterm} = (\overline{A} + \overline{B} + C)
-$$
+$\displaystyle \text{Maxterm} = (\overline{A} + \overline{B} + C)$
 4. Row $7$ ($A=1, B=1, C=1$):
-$$
-\text{Maxterm} = (\overline{A} + \overline{B} + \overline{C})
-$$
+$\displaystyle \text{Maxterm} = (\overline{A} + \overline{B} + \overline{C})$
 **Step 3 — Form the product of these maxterms.**
-$$
-F(A, B, C) = \boxed{(A + B + \overline{C})(A + \overline{B} + C)(\overline{A} + \overline{B} + C)(\overline{A} + \overline{B} + \overline{C})}
-$$
+$\displaystyle F(A, B, C) = \boxed{(A + B + \overline{C})(A + \overline{B} + C)(\overline{A} + \overline{B} + C)(\overline{A} + \overline{B} + \overline{C})}$
 </details>

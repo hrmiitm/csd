@@ -24,51 +24,35 @@
 Let the two 2-bit numbers be $A = A_1 A_0$ and $B = B_1 B_0$.
 The condition $A > B$ is satisfied under two distinct cases:
 1. The MSB of A is greater than the MSB of B:
-   $$
-   A_1 = 1 \text{ and } B_1 = 0 \implies A_1\overline{B_1}
-   $$
+   $\displaystyle A_1 = 1 \text{ and } B_1 = 0 \implies A_1\overline{B_1}$
 2. The MSBs are equal, and the LSB of A is greater than the LSB of B:
-   $$
-   (A_1 \odot B_1) \cdot A_0\overline{B_0} = (A_1 B_1 + \overline{A_1}\ \overline{B_1}) A_0 \overline{B_0}
-   $$
+   $\displaystyle (A_1 \odot B_1) \cdot A_0\overline{B_0} = (A_1 B_1 + \overline{A_1}\ \overline{B_1}) A_0 \overline{B_0}$
 
 **Step 2 — Verify and simplify.**
 
 Summing the terms:
 
-$$
-f(A>B) = A_1\overline{B_1} + (A_1 B_1 + \overline{A_1}\ \overline{B_1}) A_0 \overline{B_0}
-$$
+$\displaystyle f(A>B) = A_1\overline{B_1} + (A_1 B_1 + \overline{A_1}\ \overline{B_1}) A_0 \overline{B_0}$
 
-$$
-= A_1\overline{B_1} + A_1 B_1 A_0 \overline{B_0} + \overline{A_1}\ \overline{B_1} A_0 \overline{B_0}
-$$
+$\displaystyle = A_1\overline{B_1} + A_1 B_1 A_0 \overline{B_0} + \overline{A_1}\ \overline{B_1} A_0 \overline{B_0}$
 
 Combine $A_1\overline{B_1} + A_1 B_1 A_0 \overline{B_0}$:
 Since $X + \overline{X}Y = X + Y$:
 
-$$
-A_1\overline{B_1} + A_1 B_1 A_0 \overline{B_0} = A_1(\overline{B_1} + B_1 A_0 \overline{B_0}) = A_1(\overline{B_1} + A_0 \overline{B_0}) = A_1\overline{B_1} + A_1 A_0 \overline{B_0}
-$$
+$\displaystyle A_1\overline{B_1} + A_1 B_1 A_0 \overline{B_0} = A_1(\overline{B_1} + B_1 A_0 \overline{B_0}) = A_1(\overline{B_1} + A_0 \overline{B_0}) = A_1\overline{B_1} + A_1 A_0 \overline{B_0}$
 
 Now combine with the remaining term:
 
-$$
-f(A>B) = A_1\overline{B_1} + A_1 A_0 \overline{B_0} + \overline{A_1}\ \overline{B_1} A_0 \overline{B_0}
-$$
+$\displaystyle f(A>B) = A_1\overline{B_1} + A_1 A_0 \overline{B_0} + \overline{A_1}\ \overline{B_1} A_0 \overline{B_0}$
 
 Simplify $A_1\overline{B_1} + \overline{A_1}\ \overline{B_1} A_0 \overline{B_0}$:
 Using $X + \overline{X}Y = X + Y$:
 
-$$
-\overline{B_1}(A_1 + \overline{A_1} A_0 \overline{B_0}) = \overline{B_1}(A_1 + A_0 \overline{B_0}) = A_1\overline{B_1} + A_0 \overline{B_1}\ \overline{B_0}
-$$
+$\displaystyle \overline{B_1}(A_1 + \overline{A_1} A_0 \overline{B_0}) = \overline{B_1}(A_1 + A_0 \overline{B_0}) = A_1\overline{B_1} + A_0 \overline{B_1}\ \overline{B_0}$
 
 So the simplified expression becomes:
 
-$$
-f(A>B) = A_1\overline{B_1} + A_0 \overline{B_1}\ \overline{B_0} + A_1 A_0 \overline{B_0}
-$$
+$\displaystyle f(A>B) = A_1\overline{B_1} + A_0 \overline{B_1}\ \overline{B_0} + A_1 A_0 \overline{B_0}$
 
 This matches the **first option**.
 </details>
@@ -109,21 +93,13 @@ A BCD (Binary-Coded Decimal) encoder converts 10 decimal inputs ($D_0$ to $D_9$)
 
 **Step 2 — Express outputs as OR of active inputs.**
 
-$$
-A_0 = D_1 + D_3 + D_5 + D_7 + D_9
-$$
+$\displaystyle A_0 = D_1 + D_3 + D_5 + D_7 + D_9$
 
-$$
-A_1 = D_2 + D_3 + D_6 + D_7
-$$
+$\displaystyle A_1 = D_2 + D_3 + D_6 + D_7$
 
-$$
-A_2 = D_4 + D_5 + D_6 + D_7
-$$
+$\displaystyle A_2 = D_4 + D_5 + D_6 + D_7$
 
-$$
-A_3 = D_8 + D_9
-$$
+$\displaystyle A_3 = D_8 + D_9$
 
 **Step 3 — Count the OR gates needed.**
 
@@ -134,9 +110,7 @@ $$
 
 Total: **4 OR gates** (each with at most 5 inputs).
 
-$$
-\boxed{4 \text{ OR gates}}
-$$
+$\displaystyle \boxed{4 \text{ OR gates}}$
 </details>
 
 ---
@@ -168,9 +142,7 @@ A 2:1 MUX can implement any 2-variable Boolean function. Specifically:
 
 For a 2-variable function, we need **2** cascaded 2:1 multiplexers.
 
-$$
-\boxed{2}
-$$
+$\displaystyle \boxed{2}$
 </details>
 
 ---
@@ -254,9 +226,7 @@ We need to expand both **word capacity** and **bit width**:
 
 Total chips required:
 
-$$
-32 \times 4 = 128 \text{ chips}
-$$
+$\displaystyle 32 \times 4 = 128 \text{ chips}$
 
 **Step 2 — Determine address lines needed.**
 
@@ -282,9 +252,7 @@ Using a hierarchical approach:
     - This gives a 4-to-16 decoding.
     - To scale to 32 outputs, we require a total of **10** 2-to-4 decoders.
 
-$$
-\boxed{10}
-$$
+$\displaystyle \boxed{10}$
 </details>
 
 ---
@@ -318,9 +286,7 @@ The circuit in the image shows a combinational logic block with:
 
 This matches the behavior of a **Priority Encoder**.
 
-$$
-\boxed{\text{Priority Encoder}}
-$$
+$\displaystyle \boxed{\text{Priority Encoder}}$
 </details>
 
 ---
@@ -341,21 +307,15 @@ $$
 
 To uniquely address 512 channels, we need a **$n$-to-$m$ decoder** where:
 
-$$
-m = 512 \quad (\text{number of outputs, one per channel})
-$$
+$\displaystyle m = 512 \quad (\text{number of outputs, one per channel})$
 
 **Step 2 — Find the number of input lines $n$.**
 
 The number of input (address) lines satisfies $2^n \ge m$:
 
-$$
-2^n = 512 \implies n = 9
-$$
+$\displaystyle 2^n = 512 \implies n = 9$
 
 **Step 3 — Compute $m - n$.**
 
-$$
-m - n = 512 - 9 = \boxed{503}
-$$
+$\displaystyle m - n = 512 - 9 = \boxed{503}$
 </details>

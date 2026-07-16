@@ -27,9 +27,7 @@ The output $f$ should be $1$ when:
 - Both $X$ and $Y$ are even $\implies x_0 = 0$ and $y_0 = 0 \implies \overline{x_0}\cdot\overline{y_0}$
 - Both $X$ and $Y$ are odd $\implies x_0 = 1$ and $y_0 = 1 \implies x_0\cdot y_0$
 Summing these two mutually exclusive conditions gives the Sum-of-Products (SOP) expression:
-$$
-f = x_0\cdot y_0 + \overline{x_0}\cdot\overline{y_0}
-$$
+$\displaystyle f = x_0\cdot y_0 + \overline{x_0}\cdot\overline{y_0}$
 Note that this is equivalent to the XNOR operation: $f = x_0 \odot y_0$. The MSBs ($x_1$ and $y_1$) do not affect whether the number is even or odd, so they are excluded.
 </details>
 
@@ -46,9 +44,7 @@ Note that this is equivalent to the XNOR operation: $f = x_0 \odot y_0$. The MSB
 
 **Step 1 — Identify the expression to implement.**
 From Q1, the minimized expression is:
-$$
-f = x_0 y_0 + \overline{x_0}\ \overline{y_0} = x_0 \odot y_0 \quad (\text{XNOR})
-$$
+$\displaystyle f = x_0 y_0 + \overline{x_0}\ \overline{y_0} = x_0 \odot y_0 \quad (\text{XNOR})$
 We need to implement a 2-input XNOR gate using only 2-input NAND gates.
 **Step 2 — Construct XNOR using NAND gates.**
 Recall the standard implementation of XOR ($x_0 \oplus y_0$) using 4 NAND gates:
@@ -57,9 +53,7 @@ Recall the standard implementation of XOR ($x_0 \oplus y_0$) using 4 NAND gates:
 3. $G_3 = \overline{y_0 \cdot G_1}$
 4. $\text{XOR} = \overline{G_2 \cdot G_3}$
 An XNOR is the complement of XOR. To invert the XOR output, we pass it through a 5th NAND gate configured as an inverter:
-$$
-\text{XNOR} = \overline{\text{XOR} \cdot \text{XOR}}
-$$
+$\displaystyle \text{XNOR} = \overline{\text{XOR} \cdot \text{XOR}}$
 Thus, we require exactly **5** 2-input NAND gates.
 </details>
 
@@ -99,9 +93,7 @@ Looking at the truth table, $F = 1$ for the following rows:
 - Row 7 ($111$): $\text{Maxterm} = (\overline{A} + \overline{B} + \overline{C})$
 **Step 3 — List the maxterms.**
 Thus, the maxterms of $\overline{F}$ are:
-$$
-(A + B + \overline{C}), (A + \overline{B} + \overline{C}), (\overline{A} + B + \overline{C}), (\overline{A} + \overline{B} + \overline{C})
-$$
+$\displaystyle (A + B + \overline{C}), (A + \overline{B} + \overline{C}), (\overline{A} + B + \overline{C}), (\overline{A} + \overline{B} + \overline{C})$
 </details>
 
 ---
@@ -134,9 +126,7 @@ By tracing the circuit diagram:
 - Output of bottom-left OR gate = $\overline{x}wz + y$
 - Output of bottom-right AND gate = $(\overline{x}wz + y)x = xy$
 - Output of final OR gate $f$:
-$$
-f = \overline{x}y(\overline{w} + \overline{z}) + xy = y[\overline{x}(\overline{w} + \overline{z}) + x] = y(x + \overline{w} + \overline{z})
-$$
+$\displaystyle f = \overline{x}y(\overline{w} + \overline{z}) + xy = y[\overline{x}(\overline{w} + \overline{z}) + x] = y(x + \overline{w} + \overline{z})$
 **Step 2 — Calculate probability of $f = 0$ for uniform random inputs.**
 For a system with 4 independent inputs ($x, y, w, z$), there are $2^4 = 16$ equally likely input combinations.
 - If $y = 0$, then $f = 0$. This accounts for $8$ combinations.
@@ -170,9 +160,7 @@ For the circuit to allow current to flow and make the LED glow, there must be a 
 - Path 1 consists of switch $x$ and switch $z$ in series: $x \cdot z$
 - Path 2 consists of switch $y$ and switch $z$ in series: $y \cdot z$
 Since these two paths are in parallel, the total expression is the sum:
-$$
-\text{LED Glow} = xz + yz
-$$
+$\displaystyle \text{LED Glow} = xz + yz$
 </details>
 
 ---
@@ -202,9 +190,7 @@ Let's find the time it takes for signals to propagate from the inputs to the inp
   - Input $C \rightarrow \text{AND gate (12 ns)} \rightarrow \text{NOT gate (5 ns)} \rightarrow \text{Output}$: Total delay = $12 + 5 = 17$ ns.
 **Step 2 — Calculate the maximum delay difference (glitch duration).**
 A hazard or glitch occurs when two paths with different propagation delays feed into a gate. The duration of the potential glitch is the difference between the arrival times of the fastest and slowest paths:
-$$
-\text{Glitch Duration} = \text{Delay}_{\text{slowest}} - \text{Delay}_{\text{fastest}} = 22\text{ ns} - 15\text{ ns} = \boxed{7\text{ ns}}
-$$
+$\displaystyle \text{Glitch Duration} = \text{Delay}_{\text{slowest}} - \text{Delay}_{\text{fastest}} = 22\text{ ns} - 15\text{ ns} = \boxed{7\text{ ns}}$
 </details>
 
 ---
@@ -231,9 +217,7 @@ $$
 - Output of bottom NOT gate = $\overline{C}$
 - Output of NOR gate = $\overline{\overline{A}\ \overline{B}\ \overline{C} + \overline{C}} = \overline{\overline{C}} = C$
 - Final NAND output $F$:
-$$
-F = \overline{(A \oplus B) \cdot C}
-$$
+$\displaystyle F = \overline{(A \oplus B) \cdot C}$
 **Step 2 — Test the input combinations.**
 The output $F$ is $1$ if $(A \oplus B) \cdot C = 0$. This occurs when either $A \oplus B = 0$ (meaning $A = B$) or $C = 0$.
 1. For **$A=0, B=0, C=0$**:
@@ -266,9 +250,7 @@ If all NOT gates (and the inverting stages of NAND/NOR gates) stop working:
 - NOR gates become OR gates.
 **Step 2 — Re-evaluate the expression.**
 Substituting these changes into the circuit hierarchy, the output is represented by:
-$$
-F = AB + \overline{AB} + C
-$$
+$\displaystyle F = AB + \overline{AB} + C$
 (which simplifies to $1 + C = 1$ using Boolean simplification since $X + \overline{X} = 1$).
 </details>
 
@@ -302,9 +284,7 @@ Let inputs be $x, y, z$. The output $F = 1$ if at least two inputs are 0.
 **Step 2 — Identify maxterms (where $F = 0$).**
 The output is $0$ for minterms $3, 5, 6, 7$.
 In POS shorthand notation, we list these indices as maxterms:
-$$
-F = \prod M(3, 5, 6, 7)
-$$
+$\displaystyle F = \prod M(3, 5, 6, 7)$
 </details>
 
 ---
@@ -327,22 +307,14 @@ $$
 #### ✏️ Step-by-Step Solution
 
 **Step 1 — Expand the minterms.**
-$$
-f(x, y, z) = \overline{x}\overline{y}z + \overline{x}yz + x\overline{y}z + xyz
-$$
+$\displaystyle f(x, y, z) = \overline{x}\overline{y}z + \overline{x}yz + x\overline{y}z + xyz$
 **Step 2 — Simplify the expression.**
 Factor out common variables:
-$$
-f(x, y, z) = \overline{x}z(\overline{y} + y) + xz(\overline{y} + y)
-$$
+$\displaystyle f(x, y, z) = \overline{x}z(\overline{y} + y) + xz(\overline{y} + y)$
 Since $\overline{y} + y = 1$:
-$$
-f(x, y, z) = \overline{x}z(1) + xz(1) = \overline{x}z + xz
-$$
+$\displaystyle f(x, y, z) = \overline{x}z(1) + xz(1) = \overline{x}z + xz$
 Factor out $z$:
-$$
-f(x, y, z) = z(\overline{x} + x) = z(1) = z
-$$
+$\displaystyle f(x, y, z) = z(\overline{x} + x) = z(1) = z$
 **Step 3 — Conclude independence.**
 The simplified function is $f = z$. Since it depends solely on $z$, it is completely independent of the variables $x$ and $y$.
 Thus, it is independent of **two variables**.
@@ -378,9 +350,7 @@ Let's list the possible values of $B$ and count the valid values of $A$ that sat
 - If $B = 2$: $A \in \{0, 1\}$ $\implies$ **2 combinations** ($A=0, B=2$ and $A=1, B=2$)
 - If $B = 3$: $A \in \{0, 1, 2\}$ $\implies$ **3 combinations** ($A=0, B=3$, $A=1, B=3$, and $A=2, B=3$)
 **Step 3 — Sum the combinations.**
-$$
-\text{Total Combinations} = 0 + 1 + 2 + 3 = \boxed{6}
-$$
+$\displaystyle \text{Total Combinations} = 0 + 1 + 2 + 3 = \boxed{6}$
 </details>
 
 ---
@@ -401,44 +371,24 @@ $$
 **Step 1 — Analyze the condition $X < Y$.**
 For $X = X_1 X_0$ and $Y = Y_1 Y_0$, the condition $X < Y$ is satisfied if:
 1. The MSB of $X$ is less than the MSB of $Y$:
-   $$
-   X_1 = 0 \text{ and } Y_1 = 1 \implies \overline{X_1}Y_1
-   $$
+   $\displaystyle X_1 = 0 \text{ and } Y_1 = 1 \implies \overline{X_1}Y_1$
 2. The MSBs are equal, and the LSB of $X$ is less than the LSB of $Y$:
-   $$
-   (X_1 \odot Y_1) \cdot \overline{X_0}Y_0 = (X_1 Y_1 + \overline{X_1}\ \overline{Y_1}) \cdot \overline{X_0}Y_0
-   $$
+   $\displaystyle (X_1 \odot Y_1) \cdot \overline{X_0}Y_0 = (X_1 Y_1 + \overline{X_1}\ \overline{Y_1}) \cdot \overline{X_0}Y_0$
 **Step 2 — Sum and simplify the terms.**
-$$
-f(X < Y) = \overline{X_1}Y_1 + (X_1 Y_1 + \overline{X_1}\ \overline{Y_1}) \cdot \overline{X_0}Y_0
-$$
-$$
-= \overline{X_1}Y_1 + X_1 Y_1 \overline{X_0} Y_0 + \overline{X_1}\ \overline{Y_1}\ \overline{X_0} Y_0
-$$
+$\displaystyle f(X < Y) = \overline{X_1}Y_1 + (X_1 Y_1 + \overline{X_1}\ \overline{Y_1}) \cdot \overline{X_0}Y_0$
+$\displaystyle = \overline{X_1}Y_1 + X_1 Y_1 \overline{X_0} Y_0 + \overline{X_1}\ \overline{Y_1}\ \overline{X_0} Y_0$
 Combine the first and third terms:
-$$
-\overline{X_1}Y_1 + \overline{X_1}\ \overline{Y_1}\ \overline{X_0} Y_0 = \overline{X_1} \left( Y_1 + \overline{Y_1}\ \overline{X_0}Y_0 \right)
-$$
+$\displaystyle \overline{X_1}Y_1 + \overline{X_1}\ \overline{Y_1}\ \overline{X_0} Y_0 = \overline{X_1} \left( Y_1 + \overline{Y_1}\ \overline{X_0}Y_0 \right)$
 Using the identity $A + \overline{A}B = A + B$:
-$$
-= \overline{X_1} \left( Y_1 + \overline{X_0}Y_0 \right) = \overline{X_1}Y_1 + \overline{X_1}\ \overline{X_0}Y_0
-$$
+$\displaystyle = \overline{X_1} \left( Y_1 + \overline{X_0}Y_0 \right) = \overline{X_1}Y_1 + \overline{X_1}\ \overline{X_0}Y_0$
 Now combine this result with the second term:
-$$
-f(X < Y) = \overline{X_1}Y_1 + \overline{X_1}\ \overline{X_0}Y_0 + X_1 Y_1 \overline{X_0} Y_0
-$$
+$\displaystyle f(X < Y) = \overline{X_1}Y_1 + \overline{X_1}\ \overline{X_0}Y_0 + X_1 Y_1 \overline{X_0} Y_0$
 Combine the first and third terms:
-$$
-\overline{X_1}Y_1 + X_1 Y_1 \overline{X_0} Y_0 = Y_1 \left( \overline{X_1} + X_1 \overline{X_0}Y_0 \right)
-$$
+$\displaystyle \overline{X_1}Y_1 + X_1 Y_1 \overline{X_0} Y_0 = Y_1 \left( \overline{X_1} + X_1 \overline{X_0}Y_0 \right)$
 Using $A + \overline{A}B = A + B$:
-$$
-= Y_1 \left( \overline{X_1} + \overline{X_0}Y_0 \right) = \overline{X_1}Y_1 + \overline{X_0}Y_1Y_0
-$$
+$\displaystyle = Y_1 \left( \overline{X_1} + \overline{X_0}Y_0 \right) = \overline{X_1}Y_1 + \overline{X_0}Y_1Y_0$
 Substitute this back to get the fully minimized expression:
-$$
-f(X < Y) = \boxed{\overline{X_1}Y_1 + \overline{X_1}\ \overline{X_0}Y_0 + \overline{X_0}Y_1Y_0}
-$$
+$\displaystyle f(X < Y) = \boxed{\overline{X_1}Y_1 + \overline{X_1}\ \overline{X_0}Y_0 + \overline{X_0}Y_1Y_0}$
 </details>
 
 ---
@@ -460,9 +410,7 @@ $$
 **Step 1 — Understand BCD Encoder output representation.**
 A decimal-to-BCD encoder takes 10 inputs ($Y_0$ to $Y_9$) and produces 4 BCD output bits ($A_3, A_2, A_1, A_0$).
 The normal output for $A_2$ is:
-$$
-A_2 = Y_4 + Y_5 + Y_6 + Y_7
-$$
+$\displaystyle A_2 = Y_4 + Y_5 + Y_6 + Y_7$
 Thus, $A_2 = 1$ for inputs $4, 5, 6, 7$, and $A_2 = 0$ for inputs $0, 1, 2, 3, 8, 9$.
 **Step 2 — Identify the effect of $A_2$ stuck-at-1.**
 When the output terminal of $A_2$ fails and is always high ($A_2 = 1$):
@@ -470,9 +418,7 @@ When the output terminal of $A_2$ fails and is always high ($A_2 = 1$):
 - For inputs where $A_2$ was originally $0$ (inputs $0, 1, 2, 3, 8, 9$), the output code will be incorrect because $A_2$ becomes $1$.
 The affected inputs are $\{0, 1, 2, 3, 8, 9\}$.
 Counting these inputs gives:
-$$
-\text{Total Affected Codes} = \boxed{6}
-$$
+$\displaystyle \text{Total Affected Codes} = \boxed{6}$
 </details>
 
 ---
@@ -490,9 +436,7 @@ $$
 
 **Step 1 — Recall Shannon's Expansion Theorem.**
 Any 3-variable Boolean function $f(A, B, C)$ can be expanded about two variables (e.g., $A$ and $B$) using Shannon's expansion theorem:
-$$
-f(A, B, C) = \overline{A}\ \overline{B} \cdot f(0, 0, C) + \overline{A}B \cdot f(0, 1, C) + A\overline{B} \cdot f(1, 0, C) + AB \cdot f(1, 1, C)
-$$
+$\displaystyle f(A, B, C) = \overline{A}\ \overline{B} \cdot f(0, 0, C) + \overline{A}B \cdot f(0, 1, C) + A\overline{B} \cdot f(1, 0, C) + AB \cdot f(1, 1, C)$
 **Step 2 — Map to a 4:1 multiplexer structure.**
 A 4:1 multiplexer selects one of 4 inputs based on two select lines. By choosing $A$ and $B$ as the select lines:
 - The MUX outputs: $Y = \overline{S_1}\ \overline{S_0} I_0 + \overline{S_1} S_0 I_1 + S_1 \overline{S_0} I_2 + S_1 S_0 I_3$.
@@ -521,31 +465,23 @@ Thus, only **1** 4:1 multiplexer is required.
 - Select line: $C$
 - Inputs: $I_0 = 1$, $I_1 = 0$
 - Output:
-$$
-G_1 = \overline{C}(1) + C(0) = \overline{C}
-$$
+$\displaystyle G_1 = \overline{C}(1) + C(0) = \overline{C}$
 **Step 2 — Trace the outputs of the middle MUXes.**
 - **Upper MUX**:
   - Select line: $B$
   - Inputs: $I_0 = C$, $I_1 = G_1 = \overline{C}$
   - Output:
-$$
-G_{\text{top}} = \overline{B}C + B\overline{C} = B \oplus C
-$$
+$\displaystyle G_{\text{top}} = \overline{B}C + B\overline{C} = B \oplus C$
 - **Lower MUX**:
   - Select line: $B$
   - Inputs: $I_0 = G_1 = \overline{C}$, $I_1 = C$
   - Output:
-$$
-G_{\text{bottom}} = \overline{B}\cdot\overline{C} + BC = B \odot C = \overline{B \oplus C}
-$$
+$\displaystyle G_{\text{bottom}} = \overline{B}\cdot\overline{C} + BC = B \odot C = \overline{B \oplus C}$
 **Step 3 — Trace the output of the final MUX (right).**
 - Select line: $A$
 - Inputs: $I_0 = G_{\text{top}} = B \oplus C$, $I_1 = G_{\text{bottom}} = \overline{B \oplus C}$
 - Output:
-$$
-Y = \overline{A}(B \oplus C) + A(\overline{B \oplus C}) = A \oplus (B \oplus C) = \boxed{A \oplus B \oplus C}
-$$
+$\displaystyle Y = \overline{A}(B \oplus C) + A(\overline{B \oplus C}) = A \oplus (B \oplus C) = \boxed{A \oplus B \oplus C}$
 </details>
 
 ---
@@ -567,9 +503,7 @@ $$
 
 **Step 1 — Analyze the multiplexer connections.**
 A 4:1 multiplexer with select lines $A, B$ has output:
-$$
-f(A, B, C) = \overline{A}\ \overline{B} I_0 + \overline{A}B I_1 + A\overline{B} I_2 + AB I_3
-$$
+$\displaystyle f(A, B, C) = \overline{A}\ \overline{B} I_0 + \overline{A}B I_1 + A\overline{B} I_2 + AB I_3$
 From the circuit diagram, the inputs are connected such that:
 - $I_0 = C \implies \overline{A}\ \overline{B}C$ (minterm 1)
 - $I_1 = \overline{C} \implies \overline{A}B\overline{C}$ (minterm 2)
@@ -577,13 +511,9 @@ From the circuit diagram, the inputs are connected such that:
 - $I_3 = C \implies ABC$ (minterm 7)
 **Step 2 — List minterms and maxterms.**
 The sum of products (SOP) form is:
-$$
-f(A, B, C) = \sum(1, 2, 6, 7)
-$$
+$\displaystyle f(A, B, C) = \sum(1, 2, 6, 7)$
 The canonical Product of Sums (POS) form uses maxterms corresponding to the remaining indices where $f = 0$ (indices $\{0, 3, 4, 5\}$):
-$$
-f(A, B, C) = \boxed{\pi(0, 3, 4, 5)}
-$$
+$\displaystyle f(A, B, C) = \boxed{\pi(0, 3, 4, 5)}$
 </details>
 
 ---
@@ -608,9 +538,7 @@ If we build this structure using 2:1 multiplexers:
 - To reduce $N$ inputs down to a single output line, we must perform exactly $N - 1$ reductions.
 **Step 2 — Calculate for $N = 2^8$.**
 Given $N = 2^8 = 256$:
-$$
-\text{MUXes Required} = 256 - 1 = \boxed{255}
-$$
+$\displaystyle \text{MUXes Required} = 256 - 1 = \boxed{255}$
 </details>
 
 ---
@@ -631,25 +559,15 @@ $$
 **Step 1 — Calculate decoder layer requirements.**
 To construct a 7-to-128 decoder using 2-to-4 decoders (which have 4 outputs each):
 - **Final Layer**: Needs to output 128 lines. Since each decoder has 4 outputs:
-  $$
-  N_{\text{final}} = \frac{128}{4} = 32 \text{ decoders}
-  $$
+  $\displaystyle N_{\text{final}} = \frac{128}{4} = 32 \text{ decoders}$
 - **Second Layer**: Needs to drive the enable inputs of the 32 decoders in the final layer. Since each decoder has 4 outputs:
-  $$
-  N_{\text{second}} = \frac{32}{4} = 8 \text{ decoders}
-  $$
+  $\displaystyle N_{\text{second}} = \frac{32}{4} = 8 \text{ decoders}$
 - **Third Layer**: Needs to drive the enable inputs of the 8 decoders in the second layer. Since each decoder has 4 outputs:
-  $$
-  N_{\text{third}} = \frac{8}{4} = 2 \text{ decoders}
-  $$
+  $\displaystyle N_{\text{third}} = \frac{8}{4} = 2 \text{ decoders}$
 - **First Layer (Top)**: Needs to drive the enable inputs of the 2 decoders in the third layer. A single decoder can drive up to 4 inputs:
-  $$
-  N_{\text{top}} = 1 \text{ decoder}
-  $$
+  $\displaystyle N_{\text{top}} = 1 \text{ decoder}$
 **Step 2 — Sum the decoders.**
-$$
-\text{Total Decoders} = 32 + 8 + 2 + 1 = \boxed{42}
-$$
+$\displaystyle \text{Total Decoders} = 32 + 8 + 2 + 1 = \boxed{42}$
 </details>
 
 ---
@@ -677,20 +595,12 @@ The active-high outputs of the decoder represent the minterms of the inputs:
 - Wire to NOR gate from output $7 \implies m_7 = zyx$
 **Step 2 — Determine the NOR gate output expression.**
 The NOR gate sums the inputs and complements the result:
-$$
-f = \overline{m_1 + m_3 + m_7}
-$$
+$\displaystyle f = \overline{m_1 + m_3 + m_7}$
 In Product of Maxterms (POS) shorthand notation:
-$$
-f = \boxed{M(1, 3, 7)}
-$$
+$\displaystyle f = \boxed{M(1, 3, 7)}$
 **Step 3 — Convert to SOP form.**
 The minterms of $f$ are all indices except $\{1, 3, 7\}$, which are $\{0, 2, 4, 5, 6\}$:
-$$
-f = m_0 + m_2 + m_4 + m_5 + m_6
-$$
-$$
-f = \boxed{\overline{z}\ \overline{y}\ \overline{x} + \overline{z}y\overline{x} + z\overline{y}\ \overline{x} + z\overline{y}x + zy\overline{x}}
-$$
+$\displaystyle f = m_0 + m_2 + m_4 + m_5 + m_6$
+$\displaystyle f = \boxed{\overline{z}\ \overline{y}\ \overline{x} + \overline{z}y\overline{x} + z\overline{y}\ \overline{x} + z\overline{y}x + zy\overline{x}}$
 Thus, both highlighted options are correct representations of $f$.
 </details>

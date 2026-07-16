@@ -27,17 +27,13 @@ $$
 
 Using the **Absorption law**: $X + XY = X$
 
-$$
-AC + ABC = AC(1 + B) = AC \cdot 1 = AC
-$$
+$\displaystyle AC + ABC = AC(1 + B) = AC \cdot 1 = AC$
 
 **Step 2 — Count the gates.**
 
 The simplified expression $AC$ is just an **AND** of two variables, requiring **1 AND gate**.
 
-$$
-\boxed{1 \text{ gate}}
-$$
+$\displaystyle \boxed{1 \text{ gate}}$
 </details>
 
 ---
@@ -59,21 +55,15 @@ $$
 
 **Step 1 — Apply the NAND definition.**
 
-$$
-\text{NAND}(\overline{A}, \overline{B}) = \overline{\overline{A} \cdot \overline{B}}
-$$
+$\displaystyle \text{NAND}(\overline{A}, \overline{B}) = \overline{\overline{A} \cdot \overline{B}}$
 
 **Step 2 — Apply De Morgan's theorem.**
 
-$$
-\overline{\overline{A} \cdot \overline{B}} = \overline{\overline{A}} + \overline{\overline{B}} = A + B
-$$
+$\displaystyle \overline{\overline{A} \cdot \overline{B}} = \overline{\overline{A}} + \overline{\overline{B}} = A + B$
 
 So the NAND gate with inverted inputs $\overline{A}$ and $\overline{B}$ is equivalent to an **OR gate** with inputs $A$ and $B$.
 
-$$
-\boxed{f = A + B}
-$$
+$\displaystyle \boxed{f = A + B}$
 </details>
 
 ---
@@ -105,31 +95,21 @@ A **self-dual** function satisfies: $F^D(x, y, z) = F(x, y, z)$.
 
 **Step 2 — Compute the dual of $F(x, y, z) = xy + yz + xz$.**
 
-$$
-F^D(x, y, z) = (x + y)(y + z)(x + z)
-$$
+$\displaystyle F^D(x, y, z) = (x + y)(y + z)(x + z)$
 
 **Step 3 — Expand and simplify.**
 
-$$
-(x+y)(y+z)(x+z) = (xy + xz + y^2 + yz)(x+z)
-$$
+$\displaystyle (x+y)(y+z)(x+z) = (xy + xz + y^2 + yz)(x+z)$
 
 Since $y^2 = y$:
 
-$$
-= (xy + xz + y + yz)(x+z)
-$$
+$\displaystyle = (xy + xz + y + yz)(x+z)$
 
-$$
-= y(1 + x + z) + xz(1 + y) = xy + yz + xz \checkmark
-$$
+$\displaystyle = y(1 + x + z) + xz(1 + y) = xy + yz + xz \checkmark$
 
 This is the **majority function** (returns 1 when at least 2 of 3 inputs are 1), which is self-dual.
 
-$$
-\boxed{F(x, y, z) = xy + yz + xz \text{ is self-dual}}
-$$
+$\displaystyle \boxed{F(x, y, z) = xy + yz + xz \text{ is self-dual}}$
 </details>
 
 ---
@@ -163,13 +143,9 @@ Recall that $\overline{A \cdot B \cdot C} = \overline{A} + \overline{B} + \overl
 
 **Step 2 — Combine the terms.**
 
-$$
-Y = \overline{A} + \overline{B} + \overline{C} = \overline{x}\overline{y} + \overline{x}z + xy\overline{z}
-$$
+$\displaystyle Y = \overline{A} + \overline{B} + \overline{C} = \overline{x}\overline{y} + \overline{x}z + xy\overline{z}$
 
-$$
-\boxed{Y = \overline{x}\overline{y} + \overline{x}z + xy\overline{z}}
-$$
+$\displaystyle \boxed{Y = \overline{x}\overline{y} + \overline{x}z + xy\overline{z}}$
 </details>
 
 ---
@@ -236,29 +212,21 @@ $$
 
 **Step 1 — Simplify the expression $F(x, y, z)$.**
 
-$$
-F(x, y, z) = xyz + \overline{x}y + xy\overline{z}
-$$
+$\displaystyle F(x, y, z) = xyz + \overline{x}y + xy\overline{z}$
 
 Group the first and third terms:
 
-$$
-F = xy(z + \overline{z}) + \overline{x}y
-$$
+$\displaystyle F = xy(z + \overline{z}) + \overline{x}y$
 
 Since $z + \overline{z} = 1$:
 
-$$
-F = xy + \overline{x}y = y(x + \overline{x}) = y \cdot 1 = y
-$$
+$\displaystyle F = xy + \overline{x}y = y(x + \overline{x}) = y \cdot 1 = y$
 
 **Step 2 — Create the truth table.**
 
 Since $F = y$, $F$ must be 1 whenever $y = 1$, and 0 whenever $y = 0$. This corresponds to the table in **Option D**.
 
-$$
-\boxed{F = y}
-$$
+$\displaystyle \boxed{F = y}$
 </details>
 
 ---
@@ -282,9 +250,7 @@ $$
 
 Inspecting the circuit diagram: the first level uses an **AND gate** (outputs 1 only when all inputs are 1), and the second level uses an **OR gate** (outputs 1 when at least one input is 1). This is the standard two-level Sum-of-Products (SOP) structure.
 
-$$
-\boxed{\text{AND, OR}}
-$$
+$\displaystyle \boxed{\text{AND, OR}}$
 </details>
 
 ---
@@ -326,9 +292,7 @@ $$
 
 The canonical SOP expression is the sum of these terms:
 
-$$
-F = \overline{A}.\overline{B}.C + \overline{A}.B.C + A.\overline{B}.C + A.B.C
-$$
+$\displaystyle F = \overline{A}.\overline{B}.C + \overline{A}.B.C + A.\overline{B}.C + A.B.C$
 
 This matches **Option A**.
 </details>
@@ -358,17 +322,11 @@ The output simplifies to $\overline{B}$.
 
 **Step 2 — Express $\overline{B}$ in canonical 3-variable SOP form.**
 
-$$
-\overline{B} = \overline{B}(\overline{A} + A)(\overline{C} + C)
-$$
+$\displaystyle \overline{B} = \overline{B}(\overline{A} + A)(\overline{C} + C)$
 
-$$
-= \overline{B}(\overline{A}\,\overline{C} + \overline{A}C + A\overline{C} + AC)
-$$
+$\displaystyle = \overline{B}(\overline{A}\,\overline{C} + \overline{A}C + A\overline{C} + AC)$
 
-$$
-= \overline{A}\,\overline{B}\,\overline{C} + \overline{A}\,\overline{B}C + A\overline{B}\,\overline{C} + A\overline{B}C
-$$
+$\displaystyle = \overline{A}\,\overline{B}\,\overline{C} + \overline{A}\,\overline{B}C + A\overline{B}\,\overline{C} + A\overline{B}C$
 
 This is exactly the expression in **Option B** (using dot notation).
 </details>
@@ -394,43 +352,29 @@ This is exactly the expression in **Option B** (using dot notation).
 
 Let $X = A + \overline{B}$. The first two terms become:
 
-$$
-(X + \overline{C})(X + C)
-$$
+$\displaystyle (X + \overline{C})(X + C)$
 
 By Distributive law/identity: $(X + Y)(X + \overline{Y}) = X$.
 
-$$
-(X + \overline{C})(X + C) = X = A + \overline{B}
-$$
+$\displaystyle (X + \overline{C})(X + C) = X = A + \overline{B}$
 
 **Step 2 — Multiply by the third term.**
 
 Now we multiply by the third term $(A + B + \overline{C})$:
 
-$$
-(A + \overline{B})(A + B + \overline{C})
-$$
+$\displaystyle (A + \overline{B})(A + B + \overline{C})$
 
 Using the Distributive law $A + YZ = (A+Y)(A+Z)$:
 
-$$
-A + \overline{B}(B + \overline{C})
-$$
+$\displaystyle A + \overline{B}(B + \overline{C})$
 
-$$
-= A + \overline{B}B + \overline{B}\,\overline{C}
-$$
+$\displaystyle = A + \overline{B}B + \overline{B}\,\overline{C}$
 
 Since $\overline{B}B = 0$:
 
-$$
-= A + 0 + \overline{B}\,\overline{C} = A + \overline{B}.\overline{C}
-$$
+$\displaystyle = A + 0 + \overline{B}\,\overline{C} = A + \overline{B}.\overline{C}$
 
-$$
-\boxed{A + \overline{B}.\overline{C}}
-$$
+$\displaystyle \boxed{A + \overline{B}.\overline{C}}$
 </details>
 
 ---
@@ -466,17 +410,11 @@ Minterms 1, 3, 5, 7 in a 3-variable (A, B, C) system:
 
 The sum of these minterms is:
 
-$$
-F = \overline{A}.\overline{B}.C + \overline{A}.B.C + A.\overline{B}.C + A.B.C
-$$
+$\displaystyle F = \overline{A}.\overline{B}.C + \overline{A}.B.C + A.\overline{B}.C + A.B.C$
 
-$$
-= C(\overline{A}\,\overline{B} + \overline{A}B + A\overline{B} + AB) = C(1) = C
-$$
+$\displaystyle = C(\overline{A}\,\overline{B} + \overline{A}B + A\overline{B} + AB) = C(1) = C$
 
 This matches the expression in **Option 5** (last option).
 
-$$
-\boxed{F = C}
-$$
+$\displaystyle \boxed{F = C}$
 </details>

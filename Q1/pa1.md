@@ -17,14 +17,10 @@
 
 **Step 1 — Understand binary representation capacity.**
 Each bit in a binary code can represent one of 2 states: $0$ or $1$. For a code with $n$ bits, the total number of unique binary combinations (or distinct representations) is given by:
-$$
-\text{Total Combinations} = 2^n
-$$
+$\displaystyle \text{Total Combinations} = 2^n$
 **Step 2 — Calculate for 6 bits.**
 Given $n = 6$:
-$$
-2^6 = 2 \times 2 \times 2 \times 2 \times 2 \times 2 = \boxed{64}
-$$
+$\displaystyle 2^6 = 2 \times 2 \times 2 \times 2 \times 2 \times 2 = \boxed{64}$
 Thus, the system can represent up to 64 distinct characters.
 </details>
 
@@ -45,34 +41,17 @@ Thus, the system can represent up to 64 distinct characters.
 
 **Step 1 — Determine the maximum decimal value.**
 The largest binary number represented by $n$ bits has all bits set to $1$. In decimal, this maximum value is:
-$$
-\text{Max Value} = 2^n - 1
-$$
+$\displaystyle \text{Max Value} = 2^n - 1$
 For $n = 10$:
-$$
-2^{10} - 1 = 1024 - 1 = 1023
-$$
+$\displaystyle 2^{10} - 1 = 1024 - 1 = 1023$
 So we need to find which options are equivalent to the decimal value $1023$.
 **Step 2 — Convert 1023 to octal (base 8).**
 Perform successive division by 8:
-$$
-\begin{aligned}
-1023 \div 8 &= 127 \quad \text{remainder } 7 \\
-127 \div 8 &= 15 \quad \text{remainder } 7 \\
-15 \div 8 &= 1 \quad \text{remainder } 7 \\
-1 \div 8 &= 0 \quad \text{remainder } 1
-\end{aligned}
-$$
+$\displaystyle \begin{aligned} 1023 \div 8 &= 127 \quad \text{remainder } 7 \\ 127 \div 8 &= 15 \quad \text{remainder } 7 \\ 15 \div 8 &= 1 \quad \text{remainder } 7 \\ 1 \div 8 &= 0 \quad \text{remainder } 1 \end{aligned}$
 Reading the remainders from bottom to top gives $(1777)_8$. Thus, this option is **correct**.
 **Step 3 — Convert 1023 to hexadecimal (base 16).**
 Perform successive division by 16:
-$$
-\begin{aligned}
-1023 \div 16 &= 63 \quad \text{remainder } 15 \ (F) \\
-63 \div 16 &= 3 \quad \text{remainder } 15 \ (F) \\
-3 \div 16 &= 0 \quad \text{remainder } 3
-\end{aligned}
-$$
+$\displaystyle \begin{aligned} 1023 \div 16 &= 63 \quad \text{remainder } 15 \ (F) \\ 63 \div 16 &= 3 \quad \text{remainder } 15 \ (F) \\ 3 \div 16 &= 0 \quad \text{remainder } 3 \end{aligned}$
 Reading the remainders from bottom to top gives $(3FF)_{16}$. Thus, this option is **correct**.
 **Step 4 — Verify other options.**
 - $(1777)_9 = 1 \times 9^3 + 7 \times 9^2 + 7 \times 9 + 7 = 729 + 567 + 63 + 7 = 1366 \neq 1023$
@@ -170,9 +149,7 @@ Thus, all these characteristics are critical.
 
 **Step 1 — Recall the abstraction level hierarchy.**
 In digital system design, complexity is managed using hierarchical levels of abstraction (from top to bottom):
-$$
-\text{System} \rightarrow \text{Board (PCB)} \rightarrow \text{Modules} \rightarrow \text{Cells (Standard Cells)} \rightarrow \text{Gates} \rightarrow \text{Circuits} \rightarrow \text{Devices (Transistors)}
-$$
+$\displaystyle \text{System} \rightarrow \text{Board (PCB)} \rightarrow \text{Modules} \rightarrow \text{Cells (Standard Cells)} \rightarrow \text{Gates} \rightarrow \text{Circuits} \rightarrow \text{Devices (Transistors)}$
 **Step 2 — Locate the direct component level below modules.**
 Modules (such as ALU, multiplexers, and adders) are built by connecting standard functional blocks called **Cells** (e.g., flip-flops, half-adders).
 Therefore, modules are directly composed of **Cells**.
@@ -212,25 +189,10 @@ He observed that the number of transistors on a microchip **doubles** approximat
 
 **Step 1 — Perform successive division by 2.**
 Divide 647 by 2 repeatedly and track the remainders:
-$$
-\begin{aligned}
-647 \div 2 &= 323 \quad \text{remainder } 1 \\
-323 \div 2 &= 161 \quad \text{remainder } 1 \\
-161 \div 2 &= 80 \quad \text{remainder } 1 \\
-80 \div 2 &= 40 \quad \text{remainder } 0 \\
-40 \div 2 &= 20 \quad \text{remainder } 0 \\
-20 \div 2 &= 10 \quad \text{remainder } 0 \\
-10 \div 2 &= 5 \quad \text{remainder } 0 \\
-5 \div 2 &= 2 \quad \text{remainder } 1 \\
-2 \div 2 &= 1 \quad \text{remainder } 0 \\
-1 \div 2 &= 0 \quad \text{remainder } 1
-\end{aligned}
-$$
+$\displaystyle \begin{aligned} 647 \div 2 &= 323 \quad \text{remainder } 1 \\ 323 \div 2 &= 161 \quad \text{remainder } 1 \\ 161 \div 2 &= 80 \quad \text{remainder } 1 \\ 80 \div 2 &= 40 \quad \text{remainder } 0 \\ 40 \div 2 &= 20 \quad \text{remainder } 0 \\ 20 \div 2 &= 10 \quad \text{remainder } 0 \\ 10 \div 2 &= 5 \quad \text{remainder } 0 \\ 5 \div 2 &= 2 \quad \text{remainder } 1 \\ 2 \div 2 &= 1 \quad \text{remainder } 0 \\ 1 \div 2 &= 0 \quad \text{remainder } 1 \end{aligned}$
 **Step 2 — Assemble the binary representation.**
 Read the remainders from bottom to top:
-$$
-(647)_{10} = \boxed{(1010000111)_2}
-$$
+$\displaystyle (647)_{10} = \boxed{(1010000111)_2}$
 </details>
 
 ---
@@ -278,23 +240,13 @@ Let $b$ be the base of the number system. We can convert each term to base 10 po
 - $20_b = 2b^1 + 0b^0 = 2b$
 - $24.2_b = 2b^1 + 4b^0 + 2b^{-1} = 2b + 4 + \frac{2}{b}$
 **Step 2 — Set up the equation and solve for $b$.**
-$$
-\frac{5b^2 + b + 4}{2b} = 2b + 4 + \frac{2}{b}
-$$
+$\displaystyle \frac{5b^2 + b + 4}{2b} = 2b + 4 + \frac{2}{b}$
 Multiply the entire equation by $2b$ to clear the denominators (noting that base $b \geq 6$ since the digit $5$ is used):
-$$
-5b^2 + b + 4 = 2b \left(2b + 4 + \frac{2}{b}\right)
-$$
-$$
-5b^2 + b + 4 = 4b^2 + 8b + 4
-$$
+$\displaystyle 5b^2 + b + 4 = 2b \left(2b + 4 + \frac{2}{b}\right)$
+$\displaystyle 5b^2 + b + 4 = 4b^2 + 8b + 4$
 Subtract $4b^2 + 8b + 4$ from both sides:
-$$
-b^2 - 7b = 0
-$$
-$$
-b(b - 7) = 0
-$$
+$\displaystyle b^2 - 7b = 0$
+$\displaystyle b(b - 7) = 0$
 **Step 3 — Choose the valid base.**
 The roots are $b = 0$ or $b = 7$.
 Since a base must be greater than the largest digit present in the numbers ($5$ in $514_b$), the base must be $b \geq 6$.

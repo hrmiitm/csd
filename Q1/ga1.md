@@ -18,9 +18,7 @@
 
 **Step 1 — Convert 32 to binary.**
 
-$$
-32 = 2^5 = (100000)_2
-$$
+$\displaystyle 32 = 2^5 = (100000)_2$
 
 **Step 2 — Count the bits.**
 
@@ -30,9 +28,7 @@ The binary representation $100000$ has **6 bits**.
 
 The minimum number of bits to represent $N$ in binary is $\lfloor \log_2 N \rfloor + 1$:
 
-$$
-\lfloor \log_2 32 \rfloor + 1 = \lfloor 5 \rfloor + 1 = 5 + 1 = \boxed{6}
-$$
+$\displaystyle \lfloor \log_2 32 \rfloor + 1 = \lfloor 5 \rfloor + 1 = 5 + 1 = \boxed{6}$
 </details>
 
 ---
@@ -60,19 +56,13 @@ Moore's Law states that the number of transistors on a microchip **doubles appro
 
 In 8 years, the number of 2-year intervals is:
 
-$$
-\frac{8 \text{ years}}{2 \text{ years/doubling}} = 4 \text{ doublings}
-$$
+$\displaystyle \frac{8 \text{ years}}{2 \text{ years/doubling}} = 4 \text{ doublings}$
 
 **Step 3 — Apply the doubling formula.**
 
-$$
-\text{Transistors} = 2{,}000{,}000 \times 2^4 = 2{,}000{,}000 \times 16 = \boxed{32{,}000{,}000}
-$$
+$\displaystyle \text{Transistors} = 2{,}000{,}000 \times 2^4 = 2{,}000{,}000 \times 16 = \boxed{32{,}000{,}000}$
 
-$$
-\boxed{32 \text{ million transistors}}
-$$
+$\displaystyle \boxed{32 \text{ million transistors}}$
 </details>
 
 ---
@@ -100,19 +90,13 @@ For $(1417)_b$, digits are 1, 4, 7, so $b > 7$, i.e., $b \geq 8$.
 
 **Step 2 — Try $a = 8$.**
 
-$$
-(3451)_8 = 3 \times 8^3 + 4 \times 8^2 + 5 \times 8 + 1 = 1536 + 256 + 40 + 1 = 1833
-$$
+$\displaystyle (3451)_8 = 3 \times 8^3 + 4 \times 8^2 + 5 \times 8 + 1 = 1536 + 256 + 40 + 1 = 1833$
 
 **Step 3 — Try $b = 11$ with value 1833.**
 
-$$
-(1417)_{11} = 1 \times 11^3 + 4 \times 11^2 + 1 \times 11 + 7 = 1331 + 484 + 11 + 7 = 1833 \checkmark
-$$
+$\displaystyle (1417)_{11} = 1 \times 11^3 + 4 \times 11^2 + 1 \times 11 + 7 = 1331 + 484 + 11 + 7 = 1833 \checkmark$
 
-$$
-\boxed{a = 8,\quad b = 11}
-$$
+$\displaystyle \boxed{a = 8,\quad b = 11}$
 </details>
 
 ---
@@ -145,9 +129,7 @@ For roots $r_1 = 3$ and $r_2 = 5$:
 - Sum of roots: $r_1 + r_2 = 3 + 5 = 8 = b + 1 \Rightarrow b = 7$
 - Product of roots: $r_1 \times r_2 = 3 \times 5 = 15 = 2b + 1 = 2(7) + 1 = 15 \checkmark$
 
-$$
-\boxed{b = 7}
-$$
+$\displaystyle \boxed{b = 7}$
 </details>
 
 ---
@@ -171,17 +153,13 @@ $$
 
 The computing transformation hierarchy (from highest to lowest abstraction) is:
 
-$$
-\text{Computational Problem} \rightarrow \text{Algorithm} \rightarrow \text{Programming Language} \rightarrow \text{System Software} \rightarrow \text{Architecture} \rightarrow \text{Microarchitecture} \rightarrow \text{Hardware}
-$$
+$\displaystyle \text{Computational Problem} \rightarrow \text{Algorithm} \rightarrow \text{Programming Language} \rightarrow \text{System Software} \rightarrow \text{Architecture} \rightarrow \text{Microarchitecture} \rightarrow \text{Hardware}$
 
 **Step 2 — Identify the highest level.**
 
 A **Computational Problem** is the most abstract — it specifies *what* needs to be computed without any concern for *how* it is computed.
 
-$$
-\boxed{\text{Computational Problem}}
-$$
+$\displaystyle \boxed{\text{Computational Problem}}$
 </details>
 
 ---
@@ -200,13 +178,9 @@ $$
 
 **Step 1 — Expand using positional notation.**
 
-$$
-(11001)_2 = 1 \times 2^4 + 1 \times 2^3 + 0 \times 2^2 + 0 \times 2^1 + 1 \times 2^0
-$$
+$\displaystyle (11001)_2 = 1 \times 2^4 + 1 \times 2^3 + 0 \times 2^2 + 0 \times 2^1 + 1 \times 2^0$
 
-$$
-= 16 + 8 + 0 + 0 + 1 = \boxed{25}
-$$
+$\displaystyle = 16 + 8 + 0 + 0 + 1 = \boxed{25}$
 </details>
 
 ---
@@ -230,15 +204,11 @@ $$
 
 The largest 16-bit binary number has all bits set to 1:
 
-$$
-(1111\,1111\,1111\,1111)_2
-$$
+$\displaystyle (1111\,1111\,1111\,1111)_2$
 
 **Step 2 — Convert to decimal.**
 
-$$
-2^{16} - 1 = 65536 - 1 = \boxed{65535}
-$$
+$\displaystyle 2^{16} - 1 = 65536 - 1 = \boxed{65535}$
 </details>
 
 ---
@@ -267,15 +237,11 @@ In digital logic:
 
 **Step 2 — Check where 3.58 falls.**
 
-$$
-V_L = 3.56 < 3.58 < 3.97 = V_H
-$$
+$\displaystyle V_L = 3.56 < 3.58 < 3.97 = V_H$
 
 The voltage 3.58 falls in the forbidden zone between $V_L$ and $V_H$.
 
-$$
-\boxed{\text{Interpreted as illegal voltage}}
-$$
+$\displaystyle \boxed{\text{Interpreted as illegal voltage}}$
 </details>
 
 ---
@@ -297,31 +263,21 @@ $$
 
 **Step 1 — Convert $(421)_5$ to decimal.**
 
-$$
-(421)_5 = 4 \times 5^2 + 2 \times 5^1 + 1 \times 5^0 = 100 + 10 + 1 = 111
-$$
+$\displaystyle (421)_5 = 4 \times 5^2 + 2 \times 5^1 + 1 \times 5^0 = 100 + 10 + 1 = 111$
 
 **Step 2 — Find base $b$ such that $(157)_b = 111$.**
 
-$$
-(157)_b = 1 \times b^2 + 5 \times b + 7 = 111
-$$
+$\displaystyle (157)_b = 1 \times b^2 + 5 \times b + 7 = 111$
 
-$$
-b^2 + 5b + 7 = 111 \implies b^2 + 5b - 104 = 0
-$$
+$\displaystyle b^2 + 5b + 7 = 111 \implies b^2 + 5b - 104 = 0$
 
 **Step 3 — Solve the quadratic.**
 
-$$
-b = \frac{-5 + \sqrt{25 + 416}}{2} = \frac{-5 + \sqrt{441}}{2} = \frac{-5 + 21}{2} = \frac{16}{2} = 8
-$$
+$\displaystyle b = \frac{-5 + \sqrt{25 + 416}}{2} = \frac{-5 + \sqrt{441}}{2} = \frac{-5 + 21}{2} = \frac{16}{2} = 8$
 
 **Verify:** $(157)_8 = 64 + 40 + 7 = 111 \checkmark$
 
-$$
-\boxed{b = 8}
-$$
+$\displaystyle \boxed{b = 8}$
 </details>
 
 ---
@@ -344,19 +300,13 @@ $$
 
 **Step 1 — Convert $(223)_5$ to decimal.**
 
-$$
-(223)_5 = 2 \times 25 + 2 \times 5 + 3 = 50 + 10 + 3 = 63
-$$
+$\displaystyle (223)_5 = 2 \times 25 + 2 \times 5 + 3 = 50 + 10 + 3 = 63$
 
 **Step 2 — Convert 63 to hexadecimal.**
 
-$$
-63 = 3 \times 16 + 15 = (3F)_{16}
-$$
+$\displaystyle 63 = 3 \times 16 + 15 = (3F)_{16}$
 
-$$
-\boxed{(3F)_{16}}
-$$
+$\displaystyle \boxed{(3F)_{16}}$
 </details>
 
 ---
@@ -379,17 +329,11 @@ $$
 
 **Step 1 — Convert $(245)_6$ to decimal.**
 
-$$
-(245)_6 = 2 \times 36 + 4 \times 6 + 5 = 72 + 24 + 5 = 101
-$$
+$\displaystyle (245)_6 = 2 \times 36 + 4 \times 6 + 5 = 72 + 24 + 5 = 101$
 
 **Step 2 — Convert 101 to hexadecimal.**
 
-$$
-101 = 6 \times 16 + 5 = (65)_{16}
-$$
+$\displaystyle 101 = 6 \times 16 + 5 = (65)_{16}$
 
-$$
-\boxed{(65)_{16}}
-$$
+$\displaystyle \boxed{(65)_{16}}$
 </details>

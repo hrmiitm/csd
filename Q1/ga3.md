@@ -25,23 +25,15 @@ The minterms are $4, 6, 7$:
 
 Let's group the minterms:
 
-$$
-f = x_1\overline{x_2}\,\overline{x_3} + x_1 x_2\overline{x_3} + x_1 x_2 x_3
-$$
+$\displaystyle f = x_1\overline{x_2}\,\overline{x_3} + x_1 x_2\overline{x_3} + x_1 x_2 x_3$
 
-$$
-= x_1\overline{x_3}(\overline{x_2} + x_2) + x_1 x_2 x_3
-$$
+$\displaystyle = x_1\overline{x_3}(\overline{x_2} + x_2) + x_1 x_2 x_3$
 
-$$
-= x_1\overline{x_3} + x_1 x_2 x_3 = x_1(\overline{x_3} + x_2 x_3)
-$$
+$\displaystyle = x_1\overline{x_3} + x_1 x_2 x_3 = x_1(\overline{x_3} + x_2 x_3)$
 
 Using the distributive rule $\overline{A} + AB = \overline{A} + B$:
 
-$$
-f = x_1(\overline{x_3} + x_2) = x_1\overline{x_3} + x_1 x_2
-$$
+$\displaystyle f = x_1(\overline{x_3} + x_2) = x_1\overline{x_3} + x_1 x_2$
 
 **Step 2 — Design using NAND gates.**
 
@@ -54,9 +46,7 @@ We implement $f = x_1\overline{x_3} + x_1 x_2$ using 2-input NAND gates:
 
 Total NAND gates required = **4 gates**.
 
-$$
-\boxed{4}
-$$
+$\displaystyle \boxed{4}$
 </details>
 
 ---
@@ -86,9 +76,7 @@ Assuming a 3-variable system (A, B, C) where A is MSB:
 
 So, the function can be expressed as:
 
-$$
-F = \sum m(1, 3, 5, 6)
-$$
+$\displaystyle F = \sum m(1, 3, 5, 6)$
 
 **Step 2 — Identify the inactive terms (maxterms).**
 
@@ -104,9 +92,7 @@ The maxterms are:
 
 Thus, the POS expression is the product of these maxterms:
 
-$$
-F = (A + B + C)(A + \overline{B} + C)(\overline{A} + B + C)(\overline{A} + \overline{B} + \overline{C})
-$$
+$\displaystyle F = (A + B + C)(A + \overline{B} + C)(\overline{A} + B + C)(\overline{A} + \overline{B} + \overline{C})$
 
 This matches the **fourth option**.
 </details>
@@ -135,23 +121,17 @@ The maxterms are $1, 3, 5, 7$:
 
 The function is 0 when any of these terms are 0 (i.e. at minterms $\{1, 3, 5, 7\}$). The function is 1 at $\{0, 2, 4, 6\}$ (all binary representations ending with 0). Thus, the output is independent of $x_1$ and $x_2$ and depends only on $x_3$:
 
-$$
-f(x_1, x_2, x_3) = \overline{x_3}
-$$
+$\displaystyle f(x_1, x_2, x_3) = \overline{x_3}$
 
 **Step 2 — Implement using NOR gates.**
 
 An inverter $\overline{x_3}$ can be implemented using a single 2-input NOR gate with its inputs tied together:
 
-$$
-\text{NOR}(x_3, x_3) = \overline{x_3 + x_3} = \overline{x_3}
-$$
+$\displaystyle \text{NOR}(x_3, x_3) = \overline{x_3 + x_3} = \overline{x_3}$
 
 This requires **1 NOR gate**.
 
-$$
-\boxed{1}
-$$
+$\displaystyle \boxed{1}$
 </details>
 
 ---
@@ -197,13 +177,9 @@ Thus, there are exactly **2 minterms** where $F = 1$.
 
 With 4 variables ($A, B, C, D$), there are $2^4 = 16$ possible rows in the truth table.
 
-$$
-\text{Number of maxterms} = 16 - \text{Number of minterms} = 16 - 2 = 14
-$$
+$\displaystyle \text{Number of maxterms} = 16 - \text{Number of minterms} = 16 - 2 = 14$
 
-$$
-\boxed{14}
-$$
+$\displaystyle \boxed{14}$
 
 ---
 
@@ -273,15 +249,11 @@ From the timing diagram, identify the Boolean function implemented. The output f
 
 A 3-input XOR function can be implemented with two 2-input XOR gates in cascade:
 
-$$
-A \oplus B \oplus C = (A \oplus B) \oplus C
-$$
+$\displaystyle A \oplus B \oplus C = (A \oplus B) \oplus C$
 
 This requires **2** two-input XOR gates.
 
-$$
-\boxed{2}
-$$
+$\displaystyle \boxed{2}$
 </details>
 
 ---
@@ -311,13 +283,9 @@ The circuit implements an OR-like structure. The output $Y = 1$ whenever at leas
 
 An OR gate (or equivalent) outputs 1 when **any input is 1**. Therefore:
 
-$$
-Y = 1 \iff \text{1 or more inputs are at logic 1}
-$$
+$\displaystyle Y = 1 \iff \text{1 or more inputs are at logic 1}$
 
-$$
-\boxed{\text{1 or more inputs are at logic 1}}
-$$
+$\displaystyle \boxed{\text{1 or more inputs are at logic 1}}$
 </details>
 
 ---
@@ -347,7 +315,5 @@ Tracing through the circuit, certain inputs cancel out due to complementary path
 
 After Boolean simplification of the circuit, the output depends **only on $y$**, and is independent of $x$, $w$, and $z$.
 
-$$
-\boxed{\text{Output is independent of } x, w, \text{ and } z}
-$$
+$\displaystyle \boxed{\text{Output is independent of } x, w, \text{ and } z}$
 </details>
