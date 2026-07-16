@@ -653,30 +653,46 @@ Therefore, its truth-table output is simply the $y$ column.
 
 ## 14. SOP, POS, minterms, and maxterms
 
+### 14.0 The big idea first
+
+Think of a truth table as a list of every possible input situation for a circuit. For three inputs $A$, $B$, and $C$, there are $2^3=8$ situations (rows), numbered from 0 to 7.
+
+A **canonical expression** is a dependable way to translate selected truth-table rows directly into Boolean algebra. It may not be the shortest expression, but it is the safest starting point because there is no guessing:
+
+- use **SOP** when you are told the rows where the output must be 1;
+- use **POS** when you are told the rows where the output must be 0.
+
+The two forms describe the same kind of circuit from opposite directions. SOP says, “these are the input combinations that turn the output on.” POS says, “these are the input combinations that turn the output off.”
+
 ### 14.1 SOP and minterms
 
-**SOP** means Sum of Products: OR together several AND terms.
+**SOP** means **Sum of Products**: OR (`+`) together several AND/product terms. A minterm is therefore a tiny row detector: it becomes 1 for one chosen row and 0 for every other row.
 
-A **minterm** contains every variable exactly once and is 1 for exactly one truth-table row.
+A **minterm** contains every variable exactly once. To build one, read the row from left to right:
 
-For a minterm:
+- if the row has 0, add NOT to that variable;
+- if the row has 1, leave that variable uncomplemented;
+- AND all the literals together.
 
-- row value 0 means add NOT to the variable;
-- row value 1 means leave the variable uncomplemented.
-
-For row $ABC=101$:
+For row $ABC=101$ (row 5), the minterm is
 
 $$
 m_5=AB'C.
 $$
 
-Canonical SOP lists rows where $F=1$:
+At the row $A=1$, $B=0$, $C=1$, every factor is 1: $A=1$, $B'=1$, and $C=1$. So $AB'C=1$. On any other row, at least one factor becomes 0, making the entire AND term 0. This is why a minterm identifies exactly one row.
+
+> **Practical habit:** write the binary row above the variables, then translate each bit. For `101`, write `A B C` below it and obtain $A\,B'\,C$. Do not try to memorize the row number itself.
+
+### 14.2 Build canonical SOP step by step
+
+Canonical SOP lists every row where $F=1$:
 
 $$
 F=\sum m(1,3,5,7).
 $$
 
-For variables $A,B,C$, convert each index to a three-bit binary number:
+For variables $A,B,C$, first convert each decimal index to a three-bit binary number. Then make one minterm per row and OR the terms together.
 
 | Index | Binary | Minterm |
 |---:|:---:|---|
@@ -685,26 +701,45 @@ For variables $A,B,C$, convert each index to a three-bit binary number:
 | 5 | 101 | $AB' C$ |
 | 7 | 111 | $ABC$ |
 
-All four have $C=1$, so their sum simplifies to $C$.
+So the full canonical expression is
 
-### 14.2 POS and maxterms
+$$
+F=A'B'C+A'BC+AB'C+ABC.
+$$
 
-**POS** means Product of Sums: AND together several OR terms.
+This looks long, but notice the pattern: all four rows have $C=1$. The value of $A$ and $B$ does not matter, so the circuit is simply
 
-A **maxterm** contains every variable exactly once and is 0 for exactly one truth-table row.
+$$
+F=C.
+$$
 
-For a maxterm, use the opposite-looking rule:
+This gives a useful practical workflow:
 
-- row value 0 means write the variable uncomplemented;
-- row value 1 means add NOT to the variable.
+1. Build the canonical SOP carefully from the 1-rows.
+2. Check whether variables change across all selected rows. A changing variable may cancel during simplification.
+3. Simplify with Boolean laws or a Karnaugh map later; first make sure the canonical expression is correct.
 
-For row $ABC=101$:
+### 14.3 POS and maxterms
+
+**POS** means **Product of Sums**: AND (multiply) together several OR/sum terms. A maxterm is the opposite kind of row detector: it becomes 0 for one chosen row and 1 for every other row.
+
+A **maxterm** also contains every variable exactly once, but its construction rule is reversed:
+
+- if the row has 0, write the variable uncomplemented;
+- if the row has 1, add NOT to the variable;
+- OR all the literals together.
+
+For the same row, $ABC=101$ (row 5), the maxterm is
 
 $$
 M_5=(A'+B+C').
 $$
 
-Why? At $A=1,B=0,C=1$, every literal inside this OR is 0, so the whole maxterm is 0.
+Check it at that row: $A'=0$, $B=0$, and $C'=0$. An OR of three zeros is 0. On any other row, at least one literal becomes 1, so the OR term becomes 1. This is why a maxterm identifies exactly one **0-row**.
+
+> **Why the rule reverses:** an AND term needs every literal to be 1, so a minterm matches the row directly. An OR term must have every literal equal to 0 before it can be 0, so a maxterm uses the opposite literal for each row bit.
+
+### 14.4 Build canonical POS step by step
 
 Canonical POS lists rows where $F=0$:
 
@@ -712,7 +747,33 @@ $$
 F=\prod M(1,2,6,7).
 $$
 
-### 14.3 The memory trick
+For $A,B,C$, expand it just as mechanically as SOP:
+
+| Zero-row index | Binary | Maxterm |
+|---:|:---:|---|
+| 1 | 001 | $(A+B+C')$ |
+| 2 | 010 | $(A+B'+C)$ |
+| 6 | 110 | $(A'+B'+C)$ |
+| 7 | 111 | $(A'+B'+C')$ |
+
+Therefore,
+
+$$
+F=(A+B+C')(A+B'+C)(A'+B'+C)(A'+B'+C').
+$$
+
+The product is 0 whenever *any one* of these maxterms is 0. That is exactly what we want: the function must be 0 on rows 1, 2, 6, and 7.
+
+### 14.5 A comparison you can use in an exam
+
+| If the question gives... | Choose | Take these rows | How to write each term |
+|---|---|---|---|
+| Output values of 1 / minterm numbers / $\sum m$ | SOP | 1-rows | `0 → complemented`, `1 → plain`; AND the literals |
+| Output values of 0 / maxterm numbers / $\prod M$ | POS | 0-rows | `0 → plain`, `1 → complemented`; OR the literals |
+
+Read $\sum m(\ldots)$ as “OR these minterms” and $\prod M(\ldots)$ as “AND these maxterms.” The symbols are not ordinary addition and multiplication; they are compact notation for Boolean OR and AND.
+
+### 14.6 The memory trick
 
 $$
 \boxed{\text{SOP/minterms: use the 1 rows}}
@@ -731,9 +792,30 @@ Inside a term:
 - minterm copies a 1 and adds NOT to a 0;
 - maxterm copies a 0 and adds NOT to a 1.
 
-### 14.4 Complement questions
+### 14.7 Complement questions
 
-Maxterms of $F'$ come from rows where $F'=0$, which are exactly the rows where $F=1$. Always create a tiny extra complement column if this feels confusing.
+The complement flips every output: where $F=1$, $F'=0$; where $F=0$, $F'=1$.
+
+So:
+
+- minterms of $F'$ come from the 0-rows of $F$;
+- maxterms of $F'$ come from the 1-rows of $F$.
+
+For example, if $F=\sum m(1,3,5,7)$, then $F'$ is 0 at 1, 3, 5, and 7. Therefore,
+
+$$
+F'=\prod M(1,3,5,7).
+$$
+
+Always add a small $F'$ column beside $F$ in the truth table when solving complement questions. It prevents the most common mistake: using the original rows after the output has been flipped.
+
+### 14.8 Common beginner mistakes
+
+- **Mixing up 1-rows and 0-rows:** pause and decide whether the expression is SOP or POS before writing any term.
+- **Forgetting a variable:** canonical minterms and maxterms must include every variable once, even if it seems unnecessary.
+- **Using the minterm rule for a maxterm:** remember that maxterms are designed to become 0, so their literals are reversed.
+- **Using the wrong bit width:** with variables $A,B,C$, every row index needs three binary bits. For example, row 2 is `010`, not `10`.
+- **Simplifying too early:** first create the complete canonical expression; simplify only after checking the selected rows.
 
 ## 15. Solving every Week 1–2 question type
 
