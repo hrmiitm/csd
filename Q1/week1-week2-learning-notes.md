@@ -4,6 +4,8 @@ These notes teach the ideas needed for every question in `ga1.md`, `pa1.md`, `ga
 
 > **Best way to learn:** Read Sections 2, 3, 8, 9, and 14 first. They contain the formulas and rules used most often. Then use Section 15 as your question-solving checklist and the [quick notes](week1-week2-quick-notes.md) for revision.
 
+> **Diagrams:** The visual diagrams in this file were generated with Kroki. Their editable Mermaid source files are kept in [`Q1/diagrams`](diagrams/).
+
 ## Start here — the 6 rules to remember
 
 | Rule | What it solves |
@@ -180,6 +182,10 @@ $$
 (223)_5=2(25)+2(5)+3=63=(3F)_{16}.
 $$
 
+![Kroki diagram: convert a base-6 number to hexadecimal through decimal](assets/base-conversion-flow.svg)
+
+The important idea is the middle step: **decimal is the safe bridge between any two bases**.
+
 ### 3.6 Find an unknown base
 
 Replace every base-$b$ number by a polynomial in $b$, then solve the resulting ordinary equation.
@@ -326,6 +332,8 @@ $$
 
 The **computational problem** is the highest abstraction because it says *what* must be solved. Each later level adds more detail about *how* it will be solved.
 
+![Kroki diagram: computing transformation hierarchy](assets/abstraction-hierarchy.svg)
+
 ### 6.2 Structural/physical design hierarchy
 
 A useful simplified view for these questions is:
@@ -458,6 +466,10 @@ $$
 =A\overline B+\overline CD.
 $$
 
+The diagram shows the same idea as a circuit: a NOR gate behaves exactly like an AND gate when both inputs are inverted.
+
+![Kroki diagram: De Morgan equivalence between a NOR circuit and an AND circuit with inverted inputs](assets/de-morgan-equivalence.svg)
+
 If $\overline A$ and $\overline B$ enter a NAND gate, its output is
 
 $$
@@ -589,6 +601,10 @@ needs:
 
 Total: 3 gates.
 
+Here is the same simplified expression as a gate-level circuit. Follow the signals from left to right: invert $y$, AND it with $x$, then OR the result with $z$.
+
+![Kroki diagram: gate-level circuit for F equals z OR x AND not y](assets/simplified-logic-circuit.svg)
+
 For $AC+ABC$, simplify first:
 
 $$
@@ -701,6 +717,10 @@ $$
 $$
 \boxed{\text{POS/maxterms: use the 0 rows}}
 $$
+
+Use this visual decision path whenever a question asks for a canonical expression.
+
+![Kroki diagram: choosing canonical SOP or canonical POS from a truth table](assets/sop-pos-workflow.svg)
 
 Inside a term:
 

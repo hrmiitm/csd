@@ -1,0 +1,8 @@
+flowchart TD
+    T["Start with the truth table"] --> Q{"Which canonical form?"}
+    Q -->|"SOP: sum of minterms"| ONE["Select rows where F = 1"]
+    ONE --> MIN["Make one minterm for each selected row"]
+    MIN --> OR["OR all minterms"]
+    Q -->|"POS: product of maxterms"| ZERO["Select rows where F = 0"]
+    ZERO --> MAX["Make one maxterm for each selected row"]
+    MAX --> AND["AND all maxterms"]

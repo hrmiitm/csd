@@ -1,0 +1,8 @@
+flowchart LR
+    X["x"] --> AND["AND"]
+    Y["y"] --> NOT["NOT"]
+    NOT --> YB["not y"]
+    YB --> AND
+    AND --> OR["OR"]
+    Z["z"] --> OR
+    OR --> F["F = z OR (x AND not y)"]
