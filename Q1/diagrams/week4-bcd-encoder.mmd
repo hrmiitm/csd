@@ -1,0 +1,17 @@
+flowchart LR
+    D["one active decimal input<br/>D0 through D9"] --> E["decimal-to-BCD encoder"]
+    E --> A3["A3 = D8 + D9"]
+    E --> A2["A2 = D4 + D5 + D6 + D7"]
+    E --> A1["A1 = D2 + D3 + D6 + D7"]
+    E --> A0["A0 = D1 + D3 + D5 + D7 + D9"]
+    A3 --> B["4-bit BCD code A3 A2 A1 A0"]
+    A2 --> B
+    A1 --> B
+    A0 --> B
+
+    classDef signal fill:#e8f0fe,stroke:#1a73e8,color:#174ea6
+    classDef block fill:#fff4e5,stroke:#f29900,color:#7a4b00
+    classDef result fill:#e6f4ea,stroke:#188038,color:#0d652d
+    class D signal
+    class E block
+    class A3,A2,A1,A0,B result

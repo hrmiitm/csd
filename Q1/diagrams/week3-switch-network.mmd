@@ -1,0 +1,16 @@
+flowchart LR
+    V["Supply"] --> J{"parallel split"}
+    J --> X["switch x"]
+    J --> Y["switch y"]
+    X --> M{"paths join"}
+    Y --> M
+    M --> Z["switch z"]
+    Z --> L["LED"]
+    L --> R["Return"]
+
+    classDef source fill:#e8f0fe,stroke:#1a73e8,color:#174ea6
+    classDef switch fill:#fff4e5,stroke:#f29900,color:#7a4b00
+    classDef led fill:#e6f4ea,stroke:#188038,color:#0d652d
+    class V,R source
+    class X,Y,Z switch
+    class L led

@@ -1,0 +1,23 @@
+flowchart LR
+    ADDR["16-bit address"] --> LOW["low 11 bits<br/>address every chip"]
+    ADDR --> HIGH["high 5 bits"]
+    HIGH --> DEC["5-to-32 decoder"]
+    DEC --> BANK["select 1 of 32 banks"]
+    LOW --> BANK
+    BANK --> C0["2K x 8 chip"]
+    BANK --> C1["2K x 8 chip"]
+    BANK --> C2["2K x 8 chip"]
+    BANK --> C3["2K x 8 chip"]
+    C0 --> DATA["32-bit data word"]
+    C1 --> DATA
+    C2 --> DATA
+    C3 --> DATA
+
+    N["32 banks x 4 chips = 128 chips"] -.-> BANK
+
+    classDef signal fill:#e8f0fe,stroke:#1a73e8,color:#174ea6
+    classDef block fill:#fff4e5,stroke:#f29900,color:#7a4b00
+    classDef result fill:#e6f4ea,stroke:#188038,color:#0d652d
+    class ADDR,LOW,HIGH,N signal
+    class DEC,BANK,C0,C1,C2,C3 block
+    class DATA result

@@ -1,0 +1,23 @@
+flowchart LR
+    A["A"] --> D["3-to-8 decoder<br/>one output is active"]
+    B["B"] --> D
+    C["C"] --> D
+    D --> O0["D0 = m0"]
+    D --> O1["D1 = m1"]
+    D --> O2["D2 = m2"]
+    D --> O6["D6 = m6"]
+    D --> O7["D7 = m7"]
+    O1 --> OR["OR"]
+    O2 --> OR
+    O6 --> OR
+    O7 --> OR
+    OR --> F["F = sum m(1, 2, 6, 7)"]
+
+    classDef signal fill:#e8f0fe,stroke:#1a73e8,color:#174ea6
+    classDef block fill:#fff4e5,stroke:#f29900,color:#7a4b00
+    classDef unused fill:#f1f3f4,stroke:#80868b,color:#5f6368
+    classDef result fill:#e6f4ea,stroke:#188038,color:#0d652d
+    class A,B,C signal
+    class D,OR block
+    class O0 unused
+    class O1,O2,O6,O7,F result

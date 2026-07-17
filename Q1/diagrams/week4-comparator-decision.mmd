@@ -1,0 +1,14 @@
+flowchart TD
+    S["Compare A = A1 A0 with B = B1 B0"] --> Q1{"Are A1 and B1 different?"}
+    Q1 -->|"yes"| Q2{"Is A1 = 1?"}
+    Q2 -->|"yes"| GT["A is greater than B"]
+    Q2 -->|"no"| LT["A is less than B"]
+    Q1 -->|"no: MSBs tie"| Q3{"Compare A0 with B0"}
+    Q3 -->|"A0 = 1, B0 = 0"| GT
+    Q3 -->|"A0 = 0, B0 = 1"| LT
+    Q3 -->|"A0 = B0"| EQ["A equals B"]
+
+    classDef question fill:#fff4e5,stroke:#f29900,color:#7a4b00
+    classDef result fill:#e6f4ea,stroke:#188038,color:#0d652d
+    class Q1,Q2,Q3 question
+    class GT,LT,EQ result
