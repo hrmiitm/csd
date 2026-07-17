@@ -57,7 +57,7 @@ $$
 ## XOR, XNOR, parity, and majority
 
 $$
-A\oplus B=A'B+AB'qquad\text{(different)}
+A\oplus B=A'B+AB'\qquad\text{(different)}
 $$
 
 $$

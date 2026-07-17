@@ -167,7 +167,9 @@ Consider the circuit given below for questions 5 & 6:
 
 ![Circuit for Q5 and Q6](assets/w4ga5-6.png)
 
----### Q5 — Output Expression F for Given Circuit
+---
+
+### Q5 — Output Expression F for Given Circuit
 
 **The output expression F for the given circuit will be:**
 
@@ -176,7 +178,9 @@ Consider the circuit given below for questions 5 & 6:
 - ( ) $\overline{S_2}\,\overline{S_3}(S_1 \odot W) + S_2\overline{S_3}W + S_3\overline{W}$
 - ( ) $\overline{S_2}\,\overline{S_1}(S_3 \oplus W) + S_2\overline{S_3}\,\overline{W} + S_3 W$
 
----### Q6 — Output F with Interchanged Inputs for Second MUX
+---
+
+### Q6 — Output F with Interchanged Inputs for Second MUX
 
 **If the inputs are interchanged for the second multiplexer, then output F for the given circuit will be:**
 
@@ -191,7 +195,9 @@ Consider the circuit given below for questions 5 & 6:
 
 Questions 7–10 cover decoders, RAM, priority encoders, and other combinational circuits.
 
----### Q7 — Circuit Identification
+---
+
+### Q7 — Circuit Identification
 
 **What is the output expression for the given decoder/logic circuit?**
 
@@ -202,7 +208,9 @@ Questions 7–10 cover decoders, RAM, priority encoders, and other combinational
 - ( ) $\overline{Y_2}Y_1(Y_0 \odot Y_3)$
 - ( ) $\overline{Y_2}Y_1(\overline{Y_0} \oplus Y_3)$
 
----### Q8 — Number of 2-to-4 Decoders for 64K × 32 RAM
+---
+
+### Q8 — Number of 2-to-4 Decoders for 64K × 32 RAM
 
 **A RAM chip has a capacity of 2048 words of 8 bits each i.e (2K × 8). The number of 2-to-4 decoders with enable lines, that are required to construct a 64K × 32 RAM from 2K × 8 RAM:**
 

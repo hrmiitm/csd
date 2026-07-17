@@ -200,7 +200,9 @@ Consider the circuit shown below for questions 5, 6, and 7:
 - ( ) $xy + \overline{xy}$
 - **(✓) None of the above**
 
----### Q6 — Minimum NOR Gates Required
+---
+
+### Q6 — Minimum NOR Gates Required
 
 **Suppose we only have 2-input NOR gates, and we want to represent the above circuit diagram using only 2-input NOR gates. What is the minimum number of 2-input NOR gates required?**
 
@@ -208,7 +210,9 @@ Consider the circuit shown below for questions 5, 6, and 7:
 
 **Answer: $\boxed{2}$**
 
----### Q7 — Minimum NAND Gates Required
+---
+
+### Q7 — Minimum NAND Gates Required
 
 **Suppose we only have 2-input NAND gates, and we want to represent the above circuit diagram using only 2-input NAND gates. What is the minimum number of 2-input NAND gates required?**
 
@@ -224,7 +228,9 @@ Consider the circuit shown below for questions 5, 6, and 7:
 
 Questions 8–10 are based on the timing diagram below.
 
----### Q8 — Minimum XOR Gates for Timing Diagram
+---
+
+### Q8 — Minimum XOR Gates for Timing Diagram
 
 **Answer the question based on the given timing diagram.**
 
