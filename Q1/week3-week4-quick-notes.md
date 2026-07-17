@@ -41,7 +41,7 @@ $$
 For $n$ variables:
 
 $$
-\#m+\#M=2^n.
+\\#m+\\#M=2^n.
 $$
 
 Complement shortcuts:
@@ -97,11 +97,11 @@ If simplification removes $X$, the same conclusion follows.
 For independent uniform inputs:
 
 $$
-\Pr(F=1)=\frac{\#\text{1-rows}}{2^n},
+\Pr(F=1)=\frac{\\#\text{1-rows}}{2^n},
 $$
 
 $$
-\Pr(F=0)=\frac{\#\text{0-rows}}{2^n}.
+\Pr(F=0)=\frac{\\#\text{0-rows}}{2^n}.
 $$
 
 Simplify before counting.
@@ -234,7 +234,7 @@ $$
 For $N=2^n$ possible values:
 
 $$
-\#(A<B)=\#(A>B)=\frac{N(N-1)}2.
+\\#(A<B)=\\#(A>B)=\frac{N(N-1)}2.
 $$
 
 For two-bit numbers, this is $4\cdot3/2=6$.

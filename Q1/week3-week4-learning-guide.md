@@ -133,7 +133,7 @@ This shortcut is especially useful when a question asks for the **maxterms of th
 An $n$-variable function has $2^n$ truth-table rows. Every row is either a minterm row or a maxterm row, so:
 
 $$
-\boxed{\#\text{minterms}+\#\text{maxterms}=2^n.}
+\boxed{\\#\text{minterms}+\\#\text{maxterms}=2^n.}
 $$
 
 If a four-variable function is 1 on only 2 rows, it has
@@ -579,13 +579,13 @@ If each unsigned $n$-bit value ranges from $0$ to $N-1$, where $N=2^n$, then:
 Therefore:
 
 $$
-\boxed{\#(A<B)=\#(A>B)=\frac{N(N-1)}2.}
+\boxed{\\#(A<B)=\\#(A>B)=\frac{N(N-1)}2.}
 $$
 
 For two-bit inputs, $N=4$:
 
 $$
-\#(A<B)=\frac{4\cdot3}{2}=6.
+\\#(A<B)=\frac{4\cdot3}{2}=6.
 $$
 
 ### 10. Multiplexers
