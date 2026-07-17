@@ -124,29 +124,29 @@ Switching circuits:
 NAND:
 
 $$
-X'=\operatorname{NAND}(X,X)
+X'=\text{NAND}(X,X)
 $$
 
 $$
-XY=\operatorname{NAND}(N,N),\quad N=\operatorname{NAND}(X,Y)
+XY=\text{NAND}(N,N),\quad N=\text{NAND}(X,Y)
 $$
 
 $$
-X+Y=\operatorname{NAND}(X',Y')
+X+Y=\text{NAND}(X',Y')
 $$
 
 NOR:
 
 $$
-X'=\operatorname{NOR}(X,X)
+X'=\text{NOR}(X,X)
 $$
 
 $$
-X+Y=\operatorname{NOR}(N,N),\quad N=\operatorname{NOR}(X,Y)
+X+Y=\text{NOR}(N,N),\quad N=\text{NOR}(X,Y)
 $$
 
 $$
-XY=\operatorname{NOR}(X',Y')
+XY=\text{NOR}(X',Y')
 $$
 
 Gate-count routine:

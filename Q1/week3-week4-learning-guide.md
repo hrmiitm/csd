@@ -343,16 +343,16 @@ NAND and NOR are called **universal gates** because either type can create NOT, 
 #### 5.1 NAND constructions
 
 $$
-X'=\operatorname{NAND}(X,X)
+X'=\text{NAND}(X,X)
 $$
 
 $$
-XY=\operatorname{NAND}(N,N),
-\qquad N=\operatorname{NAND}(X,Y)
+XY=\text{NAND}(N,N),
+\qquad N=\text{NAND}(X,Y)
 $$
 
 $$
-X+Y=\operatorname{NAND}(X',Y').
+X+Y=\text{NAND}(X',Y').
 $$
 
 For an SOP expression, a NAND–NAND implementation is usually natural. For example:
@@ -372,16 +372,16 @@ The first NAND layer produces $(PQ)'$ and $(RS)'$; the final NAND performs the O
 #### 5.2 NOR constructions
 
 $$
-X'=\operatorname{NOR}(X,X)
+X'=\text{NOR}(X,X)
 $$
 
 $$
-X+Y=\operatorname{NOR}(N,N),
-\qquad N=\operatorname{NOR}(X,Y)
+X+Y=\text{NOR}(N,N),
+\qquad N=\text{NOR}(X,Y)
 $$
 
 $$
-XY=\operatorname{NOR}(X',Y').
+XY=\text{NOR}(X',Y').
 $$
 
 For a POS expression, a NOR–NOR implementation is usually natural. For example:
